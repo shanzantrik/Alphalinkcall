@@ -36,53 +36,53 @@ export default function Home() {
             <FaPhoneAlt className="text-white text-base" /> Request a Free Consultation
           </button>
         </motion.div>
-        {/* Animated Hero Visual */}
-        <motion.div className="flex-1 flex flex-col justify-center items-center relative min-h-[400px]">
+        {/* Animated Hero Visual - Responsive */}
+        <motion.div className="flex-1 flex flex-col justify-center items-center relative min-h-[300px] md:min-h-[400px] w-full max-w-xs md:max-w-none mx-auto">
           {/* Concentric Circles as background */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0">
-            <svg width="340" height="340" viewBox="0 0 340 340" fill="none">
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0 w-[220px] h-[220px] md:w-[340px] md:h-[340px]">
+            <svg width="100%" height="100%" viewBox="0 0 340 340" fill="none">
               <circle cx="170" cy="170" r="160" stroke="#60A5FA" strokeWidth="2" opacity="0.2" />
               <circle cx="170" cy="170" r="120" stroke="#3B82F6" strokeWidth="2" opacity="0.3" />
               <circle cx="170" cy="170" r="80" stroke="#2563EB" strokeWidth="2" opacity="0.4" />
             </svg>
           </div>
-          {/* Telephony Icons overlayed at top, right, bottom, left of the main circle */}
+          {/* Telephony Icons overlayed at top, right, bottom, left of the main circle - Responsive positions */}
           <>
             {/* Top */}
             <motion.div
               className="absolute z-10"
-              style={{ left: 170 - 24, top: 170 - 120 - 24 }}
+              style={{ left: '50%', top: '10%', transform: 'translate(-50%, 0)' }}
               animate={{ y: [0, -12, 0, 12, 0] }}
               transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 0 }}
             >
-              <FaPhoneAlt className="text-blue-600 text-3xl drop-shadow" />
+              <FaPhoneAlt className="text-blue-600 text-2xl md:text-3xl drop-shadow" />
             </motion.div>
             {/* Right */}
             <motion.div
               className="absolute z-10"
-              style={{ left: 170 + 120 - 24, top: 170 - 24 }}
+              style={{ right: '10%', top: '50%', transform: 'translate(0, -50%)' }}
               animate={{ y: [0, -12, 0, 12, 0] }}
               transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut", delay: 0.2 }}
             >
-              <FaComments className="text-blue-400 text-3xl drop-shadow" />
+              <FaComments className="text-blue-400 text-2xl md:text-3xl drop-shadow" />
             </motion.div>
             {/* Bottom */}
             <motion.div
               className="absolute z-10"
-              style={{ left: 170 - 24, top: 170 + 120 - 24 }}
+              style={{ left: '50%', bottom: '10%', transform: 'translate(-50%, 0)' }}
               animate={{ y: [0, -12, 0, 12, 0] }}
               transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 0.4 }}
             >
-              <FaHeadset className="text-blue-800 text-3xl drop-shadow" />
+              <FaHeadset className="text-blue-800 text-2xl md:text-3xl drop-shadow" />
             </motion.div>
             {/* Left */}
             <motion.div
               className="absolute z-10"
-              style={{ left: 170 - 120 - 24, top: 170 - 24 }}
+              style={{ left: '10%', top: '50%', transform: 'translate(0, -50%)' }}
               animate={{ y: [0, -12, 0, 12, 0] }}
               transition={{ repeat: Infinity, duration: 5.5, ease: "easeInOut", delay: 0.6 }}
             >
-              <FaEnvelope className="text-blue-400 text-3xl drop-shadow" />
+              <FaEnvelope className="text-blue-400 text-2xl md:text-3xl drop-shadow" />
             </motion.div>
           </>
           {/* Human Figure in Center */}
@@ -92,12 +92,12 @@ export default function Home() {
             animate={{ scale: [0.9, 1, 0.98, 1], opacity: [0.8, 1, 1, 1] }}
             transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
           >
-            <FaUserCircle className="text-blue-700 text-[120px] drop-shadow-lg" />
+            <FaUserCircle className="text-blue-700 text-[72px] md:text-[120px] drop-shadow-lg" />
           </motion.div>
           {/* Animated Marquee Text */}
           <motion.div className="w-full absolute left-0 -bottom-12 md:-bottom-16 overflow-hidden" initial={false} animate={{}}>
             <motion.div
-              className="flex gap-16 text-blue-800 font-bold text-lg md:text-xl whitespace-nowrap"
+              className="flex gap-8 md:gap-16 text-blue-800 font-bold text-base md:text-lg whitespace-nowrap"
               animate={{ x: ["100%", "-100%"] }}
               transition={{ repeat: Infinity, duration: 18, ease: "linear" }}
             >

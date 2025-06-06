@@ -1,10 +1,11 @@
-import type { Metadata } from "next";
+"use client";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import { FaLinkedin, FaTwitter, FaFacebook, FaPhoneAlt } from "react-icons/fa";
 import CookieConsent from "@/components/CookieConsent";
 import SubscribeForm from "../components/SubscribeForm";
+import { useState } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,28 +17,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "AlphaLinkCall | Empowering Your Business, One Call at a Time",
-  description: "AlphaLinkCall provides personalized, reliable, and efficient inbound call center services for small and medium businesses. Experience exceptional customer service and seamless integration with your operations.",
-  keywords: [
-    "inbound call center",
-    "customer service outsourcing",
-    "business call answering",
-    "omnichannel support",
-    "virtual receptionist",
-    "call center solutions",
-    "24/7 call answering",
-    "customer support",
-    "lead capture",
-    "AlphaLinkCall"
-  ].join(", ")
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [menuOpen, setMenuOpen] = useState(false);
   return (
     <html lang="en">
       <body
@@ -62,7 +47,16 @@ export default function RootLayout({
               </span>
               AlphaLinkCall
             </Link>
-            <nav className="flex items-center gap-8 text-base font-bold">
+            <button
+              className="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 group"
+              aria-label="Open menu"
+              onClick={() => setMenuOpen((v) => !v)}
+            >
+              <span className={`block w-7 h-1 rounded-full bg-blue-800 mb-1.5 transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+              <span className={`block w-7 h-1 rounded-full bg-blue-800 mb-1.5 transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`}></span>
+              <span className={`block w-7 h-1 rounded-full bg-blue-800 transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+            </button>
+            <nav className="hidden md:flex items-center gap-8 text-base font-bold">
               <Link href="/services" className="hover:text-blue-600 text-black transition">Services</Link>
               <Link href="/technology" className="hover:text-blue-600 text-black transition">Technology</Link>
               <Link href="/industries" className="hover:text-blue-600 text-black transition">Industries</Link>
@@ -72,12 +66,46 @@ export default function RootLayout({
                 <FaPhoneAlt className="text-white text-base" /> Contact
               </Link>
             </nav>
-            <div className="flex gap-4 ml-6 text-xl">
+            <div className="hidden md:flex gap-4 ml-6 text-xl">
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-blue-900"><FaLinkedin /></a>
               <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-blue-900"><FaTwitter /></a>
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-blue-900"><FaFacebook /></a>
             </div>
           </div>
+          <div
+            className={`fixed inset-0 z-40 bg-black/40 transition-opacity duration-300 ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+            onClick={() => setMenuOpen(false)}
+            aria-hidden={!menuOpen}
+          ></div>
+          <aside
+            className={`fixed top-0 right-0 h-full w-80 max-w-full bg-white shadow-2xl z-50 transform transition-transform duration-300 ${menuOpen ? 'translate-x-0' : 'translate-x-full'} flex flex-col`}
+            style={{ WebkitOverflowScrolling: 'touch' }}
+            aria-hidden={!menuOpen}
+          >
+            <button
+              className="absolute top-5 right-5 w-10 h-10 flex items-center justify-center rounded-full bg-blue-50 hover:bg-blue-100 focus:outline-none z-50"
+              aria-label="Close menu"
+              onClick={() => setMenuOpen(false)}
+            >
+              <span className="block w-6 h-0.5 bg-blue-800 rotate-45 absolute"></span>
+              <span className="block w-6 h-0.5 bg-blue-800 -rotate-45 absolute"></span>
+            </button>
+            <nav className="flex flex-col gap-6 mt-24 px-8 text-lg font-bold">
+              <Link href="/services" className="hover:text-blue-600 text-black transition" onClick={() => setMenuOpen(false)}>Services</Link>
+              <Link href="/technology" className="hover:text-blue-600 text-black transition" onClick={() => setMenuOpen(false)}>Technology</Link>
+              <Link href="/industries" className="hover:text-blue-600 text-black transition" onClick={() => setMenuOpen(false)}>Industries</Link>
+              <Link href="/about" className="hover:text-blue-600 text-black transition" onClick={() => setMenuOpen(false)}>About</Link>
+              <Link href="/blog" className="hover:text-blue-600 text-black transition" onClick={() => setMenuOpen(false)}>Blog</Link>
+              <Link href="/contact" className="flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-blue-700 to-blue-500 text-white rounded-full font-bold shadow hover:from-blue-800 hover:to-blue-600 transition mt-2" onClick={() => setMenuOpen(false)}>
+                <FaPhoneAlt className="text-white text-base" /> Contact
+              </Link>
+            </nav>
+            <div className="flex justify-center gap-6 text-2xl mt-10 mb-8">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-blue-900"><FaLinkedin /></a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-blue-900"><FaTwitter /></a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-blue-900"><FaFacebook /></a>
+            </div>
+          </aside>
         </header>
         <main className="pt-28 bg-gradient-to-b from-blue-100 via-white to-blue-50 w-full">
           <div className="w-full px-4 md:px-10">{children}</div>

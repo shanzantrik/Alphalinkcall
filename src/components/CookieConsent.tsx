@@ -1,22 +1,25 @@
 "use client";
 import { useState } from "react";
-import Link from "next/link";
 
 export default function CookieConsent() {
   const [visible, setVisible] = useState(true);
+  const [show, setShow] = useState(true);
+
+  const handleAccept = () => {
+    setVisible(false);
+    setShow(false);
+  };
+
   if (!visible) return null;
   return (
-    <div className="fixed bottom-0 left-0 w-full bg-gray-800 text-gray-100 px-4 py-4 flex flex-col md:flex-row items-center justify-between z-50 shadow-lg">
-      <span className="mb-2 md:mb-0">
-        This website uses cookies to enhance the user experience.{' '}
-        <Link href="/privacy" className="underline text-blue-300">Learn more</Link>
-      </span>
-      <button
-        onClick={() => setVisible(false)}
-        className="mt-2 md:mt-0 px-6 py-2 rounded-full bg-gradient-to-r from-blue-700 to-blue-500 text-white font-bold shadow hover:from-blue-800 hover:to-blue-600 transition"
-      >
-        Accept
-      </button>
-    </div>
+    show && (
+      <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col gap-4 items-start border border-gray-200">
+        <div className="flex items-center justify-between w-full">
+          <span className="font-semibold text-gray-800">We use cookies</span>
+          <button onClick={handleAccept} className="ml-4 text-sm text-blue-700 hover:underline font-bold">Accept</button>
+        </div>
+        <p className="text-gray-600 text-sm">This website uses cookies to ensure you get the best experience on our website. <a href="/privacy" className="text-blue-700 underline">Learn more</a></p>
+      </div>
+    )
   );
 }

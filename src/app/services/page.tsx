@@ -8,22 +8,22 @@ const services = [
   {
     title: "Fractional Call Centre Services",
     desc: "Use our team part-time or on-demand. No full-time hires or managing rosters.",
-    img: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80",
+    img: "/pexels-jep-gambardella-7689734.webp",
   },
   {
     title: "After-Hours Call Handling",
     desc: "Night, weekend, and public holiday coverage. Escalation protocols, no voicemail.",
-    img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80",
+    img: "/pexels-mart-production-7709271.webp",
   },
   {
     title: "Daytime Overflow Support",
     desc: "Backup when you're flat out. Seamless call forwarding, info capture.",
-    img: "https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80",
+    img: "/pexels-mart-production-7709251.webp",
   },
   {
     title: "Platform Integration",
     desc: "We work inside your systems. Familiar with CRMs, job schedulers, booking platforms. Tailored setup and onboarding.",
-    img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
+    img: "/alphaplatform2.webp",
   },
 ];
 

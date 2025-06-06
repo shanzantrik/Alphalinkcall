@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { FaPhoneAlt, FaComments, FaHeadset, FaUserCircle, FaEnvelope, FaRegSmile, FaRegClock, FaRegCheckCircle, FaRegListAlt } from "react-icons/fa";
+import { FaPhoneAlt, FaComments, FaHeadset, FaUserCircle, FaEnvelope, FaRegSmile, FaRegClock, FaRegCheckCircle, FaRegListAlt, FaWhatsapp } from "react-icons/fa";
 import { useState } from "react";
 import CalendlyModal from "../components/CalendlyModal";
 import Image from "next/image";
@@ -10,6 +10,18 @@ export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 via-white to-blue-50 flex flex-col items-center justify-center px-4">
+      {/* WhatsApp Floating Button */}
+      <a
+        href="https://wa.me/61414626109"
+            target="_blank"
+            rel="noopener noreferrer"
+        className="fixed z-50 bottom-6 right-6 md:bottom-8 md:right-8 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg flex items-center justify-center w-16 h-16 transition-all group"
+        title="Chat with us on WhatsApp"
+        aria-label="Chat with us on WhatsApp"
+      >
+        <FaWhatsapp className="text-4xl" />
+        <span className="absolute bottom-20 right-0 bg-black text-white text-xs rounded px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none">Chat with us on WhatsApp</span>
+      </a>
       <CalendlyModal open={modalOpen} onClose={() => setModalOpen(false)} />
       <div className="w-full max-w-7xl mx-auto">
       {/* Hero Section */}
@@ -117,29 +129,35 @@ export default function Home() {
       </section>
 
       {/* Subpages Showcase */}
-      <section className="w-full grid grid-cols-1 md:grid-cols-3 gap-10 py-10">
+      <section className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 py-10">
         {/* Services */}
-        <Link href="/services" className="group bg-gradient-to-br from-blue-100 to-blue-400 border-0 rounded-2xl shadow-lg hover:shadow-2xl transition flex flex-col overflow-hidden">
-          <Image src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80" alt="Services" width={600} height={192} className="h-48 w-full object-cover group-hover:scale-105 transition" />
-          <div className="p-8 flex-1 flex flex-col">
+        <Link href="/services" className="group block rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition bg-white">
+          <div className="relative w-full h-56">
+            <Image src="/alpha4.webp" alt="Services" fill className="object-cover w-full h-full group-hover:scale-105 transition duration-300" />
+          </div>
+          <div className="p-6 flex flex-col items-start">
             <h2 className="text-2xl font-bold text-blue-900 mb-2">Call Answering Services</h2>
             <p className="text-gray-800 mb-4 flex-1">Never miss a customer call. 24/7 professional call answering for plumbers, electricians, and trades.</p>
             <span className="text-blue-900 font-semibold group-hover:underline">Learn more →</span>
           </div>
         </Link>
         {/* Technology */}
-        <Link href="/technology" className="group bg-gradient-to-br from-green-100 to-green-400 border-0 rounded-2xl shadow-lg hover:shadow-2xl transition flex flex-col overflow-hidden">
-          <Image src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80" alt="Smart Call Routing" width={600} height={192} className="h-48 w-full object-cover group-hover:scale-105 transition" />
-          <div className="p-8 flex-1 flex flex-col">
+        <Link href="/technology" className="group block rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition bg-white">
+          <div className="relative w-full h-56">
+            <Image src="/alpha5.webp" alt="Smart Call Routing" fill className="object-cover w-full h-full group-hover:scale-105 transition duration-300" />
+          </div>
+          <div className="p-6 flex flex-col items-start">
             <h2 className="text-2xl font-bold text-green-900 mb-2">Smart Call Routing</h2>
             <p className="text-gray-800 mb-4 flex-1">AI-powered call routing and message delivery. Get urgent jobs to the right team, fast.</p>
             <span className="text-green-900 font-semibold group-hover:underline">Learn more →</span>
           </div>
         </Link>
         {/* Industries */}
-        <Link href="/industries" className="group bg-gradient-to-br from-orange-100 to-orange-400 border-0 rounded-2xl shadow-lg hover:shadow-2xl transition flex flex-col overflow-hidden">
-          <Image src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Industries" width={600} height={192} className="h-48 w-full object-cover group-hover:scale-105 transition" />
-          <div className="p-8 flex-1 flex flex-col">
+        <Link href="/industries" className="group block rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition bg-white">
+          <div className="relative w-full h-56">
+            <Image src="/alpha6.webp" alt="Industries" fill className="object-cover w-full h-full group-hover:scale-105 transition duration-300" />
+          </div>
+          <div className="p-6 flex flex-col items-start">
             <h2 className="text-2xl font-bold text-orange-900 mb-2">For Trades & Services</h2>
             <p className="text-gray-800 mb-4 flex-1">Specialized support for plumbers, electricians, HVAC, and home service pros. Industry-focused solutions.</p>
             <span className="text-orange-900 font-semibold group-hover:underline">See how it works →</span>
@@ -288,7 +306,7 @@ export default function Home() {
         {/* Image column - now second */}
         <div className="flex-1 flex justify-center items-center order-2 md:order-none">
           <Image
-            src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80"
+            src="/alpha1.webp"
             alt="Trust and Partnership"
             width={600}
             height={256}

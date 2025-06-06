@@ -8,7 +8,7 @@ const team = [
   {
     name: "Hadley Shapiro",
     role: "CEO & Founder",
-    img: "https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=facearea&w=400&q=80",
+    img: "/Hadley-Shapiro.webp",
     bio: "Hadley is the visionary behind AlphaLinkCall, blending years of business leadership with a passion for customer experience and operational excellence.",
   },
 ];
@@ -22,7 +22,7 @@ export default function About() {
       <h1 className="text-5xl font-extrabold text-blue-900 mb-8 text-center">About AlphaLinkCall</h1>
       {/* Aussie-based, Globally Fulfilled */}
       <section className="mb-16 flex flex-col md:flex-row gap-10 items-center">
-        <Image src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=500&q=80" alt="Australia" width={500} height={333} className="rounded-xl shadow-lg w-full max-w-xs object-cover" />
+        <Image src="/pexels-mart-production-7709271.webp" alt="Australia" width={500} height={333} className="rounded-xl shadow-lg w-full max-w-xs object-cover" />
         <div>
           <h2 className="text-2xl font-bold text-blue-700 mb-2">Aussie-based, Globally Fulfilled</h2>
           <p className="text-gray-700 mb-4">Aussie-based, globally fulfilled model. Built by business owners for business owners. Our team has call centre, trade, health, and ops backgrounds. We know your pain and we&apos;ve built around it.</p>
@@ -40,7 +40,7 @@ export default function About() {
             <li>Starting from just $499/month, vs $10K+ DIY</li>
           </ul>
         </div>
-        <Image src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=500&q=80" alt="Teamwork" width={500} height={333} className="rounded-xl shadow-lg w-full max-w-xs object-cover flex-1" />
+        <Image src="/pexels-mart-production-7709251.webp" alt="Teamwork" width={500} height={333} className="rounded-xl shadow-lg w-full max-w-xs object-cover flex-1" />
       </section>
       {/* Pricing Table */}
       <section className="mb-16">
@@ -72,7 +72,7 @@ export default function About() {
       </section>
       {/* Our Story */}
       <section className="mb-16 flex flex-col md:flex-row gap-10 items-center">
-        <Image src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=500&q=80" alt="Our Story" width={500} height={333} className="rounded-xl shadow-lg w-full max-w-xs object-cover" />
+        <Image src="/pexels-mart-production-7709214.webp" alt="Our Story" width={500} height={333} className="rounded-xl shadow-lg w-full max-w-xs object-cover" />
         <div>
           <h2 className="text-2xl font-bold text-blue-700 mb-2">Our Story</h2>
           <p className="text-gray-700 mb-4">Founded by customer service professionals, AlphaLinkCall was created to bridge the gap between technology and the human touch. We believe every call is an opportunity to build trust and loyalty.</p>

@@ -49,8 +49,9 @@ export default function Technology() {
         <div className="w-full flex flex-col items-center justify-center mb-6">
           {/* Animated AI Workflow - Horizontal Flow */}
           <div className="relative flex flex-col items-center justify-center w-full max-w-4xl py-8">
-            <div className="flex flex-row items-center justify-center gap-8 w-full relative">
-              {/* Inbound: Customer Call → AI Voice Bot → Agent → CRM */}
+            {/* Inbound: Customer Call → AI Voice Bot → Agent → CRM */}
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 w-full relative">
+              {/* Customer Call */}
               <div className="flex flex-col items-center min-w-[90px]">
                 <div className="bg-blue-100 rounded-full p-4 mb-2 shadow">
                   <FaHeadset className="text-blue-700 text-4xl" />
@@ -127,7 +128,7 @@ export default function Technology() {
               </div>
             </div>
             {/* Outbound: AI Voice Bot → Customer */}
-            <div className="flex flex-row items-center justify-center gap-8 w-full mt-8">
+            <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 w-full mt-8">
               <div className="flex flex-col items-center min-w-[90px]">
                 <div className="bg-yellow-100 rounded-full p-4 mb-2 shadow animate-bounce-slow">
                   <FaRobot className="text-yellow-500 text-4xl" />

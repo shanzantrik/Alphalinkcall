@@ -3,6 +3,7 @@ import { useState } from "react";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import CalendlyModal from "../../components/CalendlyModal";
 import { FaRobot, FaCloud, FaChartBar, FaHeadset, FaLock, FaSyncAlt } from "react-icons/fa";
+import Image from "next/image";
 
 const features = [
   {
@@ -45,7 +46,7 @@ export default function Technology() {
       <Breadcrumbs segments={[{ name: "Home", href: "/" }, { name: "Technology" }]} />
       {/* Hero Banner */}
       <div className="w-full flex flex-col items-center mb-12">
-        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80" alt="Technology" className="rounded-2xl shadow-lg w-full max-w-3xl object-cover mb-6" />
+        <Image src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80" alt="Technology" width={900} height={400} className="rounded-2xl shadow-lg w-full max-w-3xl object-cover mb-6" />
         <h1 className="text-5xl font-extrabold text-blue-900 mb-2 text-center">Our Technology</h1>
         <p className="text-lg text-gray-700 text-center max-w-2xl mb-2">Cutting-edge tools, AI, and seamless integrations—built to empower your business and delight your customers, 24/7.</p>
       </div>

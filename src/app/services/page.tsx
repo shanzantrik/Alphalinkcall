@@ -2,6 +2,7 @@
 import { useState } from "react";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import CalendlyModal from "../../components/CalendlyModal";
+import Image from "next/image";
 
 const services = [
   {
@@ -53,9 +54,11 @@ export default function Services() {
       <div className="relative w-full flex flex-col md:flex-row items-center gap-10 bg-white rounded-2xl shadow-lg p-8 transition-all duration-500">
         {/* Left: Image */}
         <div className="flex-1 flex justify-center items-center">
-          <img
+          <Image
             src={activeService.img}
             alt={activeService.title}
+            width={400}
+            height={300}
             className="rounded-xl shadow-lg w-full max-w-md object-cover transition-all duration-500"
           />
         </div>

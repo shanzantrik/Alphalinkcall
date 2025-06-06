@@ -3,6 +3,7 @@ import path from "path";
 import matter from "gray-matter";
 import Link from "next/link";
 import Breadcrumbs from "../../components/Breadcrumbs";
+import Image from "next/image";
 
 export const metadata = {
   title: "Blog & Resources | InnoCall",
@@ -53,7 +54,7 @@ export default function Blog() {
         {posts.map((post) => (
           <div key={post.slug} className="bg-white rounded-xl shadow p-0 overflow-hidden">
             <Link href={`/blog/${post.slug}`}>
-              <img src={post.imageUrl} alt={post.title} className="w-full h-56 object-cover" />
+              <Image src={post.imageUrl} alt={post.title} width={800} height={224} className="w-full h-56 object-cover" />
             </Link>
             <div className="p-6">
               <h2 className="text-2xl font-semibold text-gray-900 mb-2">

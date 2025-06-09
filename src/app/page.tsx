@@ -5,11 +5,12 @@ import { FaPhoneAlt, FaComments, FaHeadset, FaUserCircle, FaEnvelope, FaRegSmile
 import { useState } from "react";
 import CalendlyModal from "../components/CalendlyModal";
 import Image from "next/image";
+import TestimonialCarousel from "../components/TestimonialCarousel";
 
 export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-100 via-white to-blue-50 flex flex-col items-center justify-center px-4">
+    <div className="min-h-screen bg-gradient-to-b from-blue-100 via-white to-blue-50 flex flex-col items-center justify-center px-4 pt-10 w-full">
       {/* WhatsApp Floating Button */}
       <a
         href="https://wa.me/61414626109"
@@ -183,6 +184,8 @@ export default function Home() {
         >
           Why Choose AlphaLinkCall for Your Business?
         </motion.h2>
+        {/* Testimonial Carousel */}
+        <TestimonialCarousel />
         <div className="w-full max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 z-10">
           {/* Card 1 */}
           <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-start gap-4">

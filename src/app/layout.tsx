@@ -110,7 +110,7 @@ export default function RootLayout({
             </div>
           </aside>
         </header>
-        <main className="pt-28 bg-gradient-to-b from-blue-100 via-white to-blue-50 w-full">
+        <main className="pt-8 bg-gradient-to-b from-blue-100 via-white to-blue-50 w-full">
           <div className="w-full px-4 md:px-10">{children}</div>
         </main>
         <footer className="w-full bg-gray-900 border-t border-gray-800 mt-16 py-10 px-4 flex flex-col items-center gap-8 text-gray-200 relative">
@@ -142,11 +142,23 @@ export default function RootLayout({
               <span className="text-gray-400 text-sm mb-2">Phone: <a href="tel:+1234567890" className="hover:text-blue-400">(123) 456-7890</a></span>
             </div>
             <div className="flex-1 flex flex-col items-center justify-center">
+            <div className="flex justify-center gap-8 my-8">
+                              <span title="SSL Secured" className="flex items-center justify-center w-16 h-16 bg-white rounded-full shadow border border-gray-200">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9v3H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-1V9c0-3.87-3.13-7-7-7zm0 2c2.76 0 5 2.24 5 5v3H7V9c0-2.76 2.24-5 5-5zm-8 9h16v6H4v-6zm8 2a2 2 0 0 0-2 2h4a2 2 0 0 0-2-2z" fill="#2563eb"/></svg>
+                              </span>
+                              <span title="Trustpilot" className="flex items-center justify-center w-16 h-16 bg-white rounded-full shadow border border-gray-200">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.09 6.26L20 9.27l-5 3.64L16.18 21 12 17.27 7.82 21 9 12.91l-5-3.64 5.91-.91z" fill="#00b67a"/></svg>
+                              </span>
+                              <span title="Google Reviews" className="flex items-center justify-center w-16 h-16 bg-white rounded-full shadow border border-gray-200">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#fff"/><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z" fill="#4285F4"/></svg>
+                              </span>
+                   </div>
               <div className="flex justify-center gap-6 text-2xl mb-4">
                 <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400"><FaLinkedin /></a>
                 <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400"><FaTwitter /></a>
                 <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400"><FaFacebook /></a>
-              </div>
+
+                  </div>
             </div>
             <div className="flex-1 flex flex-col items-center">
               <SubscribeForm />
@@ -162,6 +174,7 @@ export default function RootLayout({
             <Link href="/privacy" className="hover:text-blue-400 transition">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-blue-400 transition">Terms of Service</Link>
           </div>
+
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className="mx-auto flex items-center justify-center bg-blue-700 hover:bg-blue-800 text-white rounded-full w-12 h-12 shadow-lg transition mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
@@ -172,7 +185,7 @@ export default function RootLayout({
           </button>
           <div className="w-full flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 mt-8 border-t border-gray-800 pt-4 gap-2">
             <span>&copy; {new Date().getFullYear()} AlphaLinkCall. All rights reserved.</span>
-            <span>Designed with ❤️ by <a href="https://www.linkedin.com/in/hadley-shapiro/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">Hadley Shapiro</a></span>
+            <span>Designed with ❤️ by <a href="https://www.linkedin.com/in/hadley-shapiro/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">WebDev</a></span>
           </div>
         </footer>
         <div className="fixed bottom-6 left-6 z-50 max-w-xs w-full">

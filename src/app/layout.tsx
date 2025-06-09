@@ -28,9 +28,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <header className="w-full bg-gradient-to-b from-blue-50 to-white shadow-sm fixed top-0 left-0 z-50 border-b border-gray-100">
+        <header className="w-full bg-gradient-to-b from-gray-200 to-gray-50 shadow-sm fixed top-0 left-0 z-50 border-b border-gray-200">
           <div className="w-full flex justify-between items-center py-6 px-4 md:px-10">
-            <Link href="/" className="flex items-center gap-2 text-2xl font-bold tracking-tight text-blue-800">
+            <Link href="/" className="flex items-center gap-2 text-2xl font-bold tracking-tight text-gray-900">
               <span className="inline-block align-middle" style={{ width: 40, height: 40 }}>
                 <svg viewBox="0 0 120 120" id="Layer_1" xmlns="http://www.w3.org/2000/svg" fill="none" width="40" height="40">
                   <ellipse fill="#FFB562" cx="20.1" cy="65" rx="6.4" ry="6.4"></ellipse>
@@ -51,28 +51,28 @@ export default function RootLayout({
               AlphaLinkCall
             </Link>
             <button
-              className="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded focus:outline-none focus:ring-2 focus:ring-blue-400 group"
+              className="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded focus:outline-none focus:ring-2 focus:ring-gray-400 group"
               aria-label="Open menu"
               onClick={() => setMenuOpen((v) => !v)}
             >
-              <span className={`block w-7 h-1 rounded-full bg-blue-800 mb-1.5 transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-              <span className={`block w-7 h-1 rounded-full bg-blue-800 mb-1.5 transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`}></span>
-              <span className={`block w-7 h-1 rounded-full bg-blue-800 transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+              <span className={`block w-7 h-1 rounded-full bg-gray-800 mb-1.5 transition-all duration-300 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+              <span className={`block w-7 h-1 rounded-full bg-gray-800 mb-1.5 transition-all duration-300 ${menuOpen ? 'opacity-0' : ''}`}></span>
+              <span className={`block w-7 h-1 rounded-full bg-gray-800 transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
             </button>
             <nav className="hidden md:flex items-center gap-8 text-base font-bold">
-              <Link href="/services" className="hover:text-blue-600 text-black transition">Services</Link>
-              <Link href="/technology" className="hover:text-blue-600 text-black transition">Technology</Link>
-              <Link href="/industries" className="hover:text-blue-600 text-black transition">Industries</Link>
-              <Link href="/about" className="hover:text-blue-600 text-black transition">About</Link>
-              <Link href="/blog" className="hover:text-blue-600 text-black transition">Blog</Link>
-              <Link href="/contact" className="ml-4 flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-blue-700 to-blue-500 text-white rounded-full font-bold shadow hover:from-blue-800 hover:to-blue-600 transition">
+              <Link href="/services" className="hover:text-gray-700 text-gray-900 transition">Services</Link>
+              <Link href="/technology" className="hover:text-gray-700 text-gray-900 transition">Technology</Link>
+              <Link href="/industries" className="hover:text-gray-700 text-gray-900 transition">Industries</Link>
+              <Link href="/about" className="hover:text-gray-700 text-gray-900 transition">About</Link>
+              <Link href="/blog" className="hover:text-gray-700 text-gray-900 transition">Blog</Link>
+              <Link href="/contact" className="ml-4 flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-gray-800 to-gray-600 text-white rounded-full font-bold shadow hover:from-gray-900 hover:to-gray-700 transition">
                 <FaPhoneAlt className="text-white text-base" /> Contact
               </Link>
             </nav>
             <div className="hidden md:flex gap-4 ml-6 text-xl">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-blue-900"><FaLinkedin /></a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-blue-900"><FaTwitter /></a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-blue-900"><FaFacebook /></a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-gray-900"><FaLinkedin /></a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-gray-900"><FaTwitter /></a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-gray-900"><FaFacebook /></a>
             </div>
           </div>
           <div
@@ -86,31 +86,31 @@ export default function RootLayout({
             aria-hidden={!menuOpen}
           >
             <button
-              className="absolute top-5 right-5 w-10 h-10 flex items-center justify-center rounded-full bg-blue-50 hover:bg-blue-100 focus:outline-none z-50"
+              className="absolute top-5 right-5 w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 focus:outline-none z-50"
               aria-label="Close menu"
               onClick={() => setMenuOpen(false)}
             >
-              <span className="block w-6 h-0.5 bg-blue-800 rotate-45 absolute"></span>
-              <span className="block w-6 h-0.5 bg-blue-800 -rotate-45 absolute"></span>
+              <span className="block w-6 h-0.5 bg-gray-800 rotate-45 absolute"></span>
+              <span className="block w-6 h-0.5 bg-gray-800 -rotate-45 absolute"></span>
             </button>
             <nav className="flex flex-col gap-6 mt-24 px-8 text-lg font-bold">
-              <Link href="/services" className="hover:text-blue-600 text-black transition" onClick={() => setMenuOpen(false)}>Services</Link>
-              <Link href="/technology" className="hover:text-blue-600 text-black transition" onClick={() => setMenuOpen(false)}>Technology</Link>
-              <Link href="/industries" className="hover:text-blue-600 text-black transition" onClick={() => setMenuOpen(false)}>Industries</Link>
-              <Link href="/about" className="hover:text-blue-600 text-black transition" onClick={() => setMenuOpen(false)}>About</Link>
-              <Link href="/blog" className="hover:text-blue-600 text-black transition" onClick={() => setMenuOpen(false)}>Blog</Link>
-              <Link href="/contact" className="flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-blue-700 to-blue-500 text-white rounded-full font-bold shadow hover:from-blue-800 hover:to-blue-600 transition mt-2" onClick={() => setMenuOpen(false)}>
+              <Link href="/services" className="hover:text-gray-700 text-gray-900 transition" onClick={() => setMenuOpen(false)}>Services</Link>
+              <Link href="/technology" className="hover:text-gray-700 text-gray-900 transition" onClick={() => setMenuOpen(false)}>Technology</Link>
+              <Link href="/industries" className="hover:text-gray-700 text-gray-900 transition" onClick={() => setMenuOpen(false)}>Industries</Link>
+              <Link href="/about" className="hover:text-gray-700 text-gray-900 transition" onClick={() => setMenuOpen(false)}>About</Link>
+              <Link href="/blog" className="hover:text-gray-700 text-gray-900 transition" onClick={() => setMenuOpen(false)}>Blog</Link>
+              <Link href="/contact" className="flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-gray-800 to-gray-600 text-white rounded-full font-bold shadow hover:from-gray-900 hover:to-gray-700 transition mt-2" onClick={() => setMenuOpen(false)}>
                 <FaPhoneAlt className="text-white text-base" /> Contact
               </Link>
             </nav>
             <div className="flex justify-center gap-6 text-2xl mt-10 mb-8">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-blue-900"><FaLinkedin /></a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-blue-900"><FaTwitter /></a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-blue-700 hover:text-blue-900"><FaFacebook /></a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-gray-900"><FaLinkedin /></a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-gray-900"><FaTwitter /></a>
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-gray-900"><FaFacebook /></a>
             </div>
           </aside>
         </header>
-        <main className="pt-8 bg-gradient-to-b from-blue-100 via-white to-blue-50 w-full">
+        <main className="pt-8 bg-gradient-to-b from-gray-100 via-gray-200 to-gray-300 w-full">
           <div className="w-full px-4 md:px-10">{children}</div>
         </main>
         <footer className="w-full bg-gray-900 border-t border-gray-800 mt-16 py-10 px-4 flex flex-col items-center gap-8 text-gray-200 relative">
@@ -138,8 +138,8 @@ export default function RootLayout({
               </span>
               <span className="text-gray-400 text-sm mb-2">Empowering Your Business, One Call at a Time</span>
               <span className="text-gray-400 text-sm mb-2">123 Main St, Suite 100, Your City, ST 12345</span>
-              <span className="text-gray-400 text-sm mb-2">Email: <a href="mailto:info@AlphaLinkCall.com" className="hover:text-blue-400">info@AlphaLinkCall.com</a></span>
-              <span className="text-gray-400 text-sm mb-2">Phone: <a href="tel:+1234567890" className="hover:text-blue-400">(123) 456-7890</a></span>
+              <span className="text-gray-400 text-sm mb-2">Email: <a href="mailto:info@AlphaLinkCall.com" className="hover:text-gray-300">info@AlphaLinkCall.com</a></span>
+              <span className="text-gray-400 text-sm mb-2">Phone: <a href="tel:+1234567890" className="hover:text-gray-300">(123) 456-7890</a></span>
             </div>
             <div className="flex-1 flex flex-col items-center justify-center">
             <div className="flex justify-center gap-8 my-8">
@@ -154,9 +154,9 @@ export default function RootLayout({
                               </span>
                    </div>
               <div className="flex justify-center gap-6 text-2xl mb-4">
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400"><FaLinkedin /></a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400"><FaTwitter /></a>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400"><FaFacebook /></a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400"><FaLinkedin /></a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400"><FaTwitter /></a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400"><FaFacebook /></a>
 
                   </div>
             </div>
@@ -165,19 +165,19 @@ export default function RootLayout({
             </div>
           </div>
           <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-400 mt-8">
-            <Link href="/services" className="hover:text-blue-400 transition">Services</Link>
-            <Link href="/technology" className="hover:text-blue-400 transition">Technology</Link>
-            <Link href="/industries" className="hover:text-blue-400 transition">Industries</Link>
-            <Link href="/about" className="hover:text-blue-400 transition">About</Link>
-            <Link href="/blog" className="hover:text-blue-400 transition">Blog</Link>
-            <Link href="/contact" className="hover:text-blue-400 transition">Contact</Link>
-            <Link href="/privacy" className="hover:text-blue-400 transition">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-blue-400 transition">Terms of Service</Link>
+            <Link href="/services" className="hover:text-gray-300 transition">Services</Link>
+            <Link href="/technology" className="hover:text-gray-300 transition">Technology</Link>
+            <Link href="/industries" className="hover:text-gray-300 transition">Industries</Link>
+            <Link href="/about" className="hover:text-gray-300 transition">About</Link>
+            <Link href="/blog" className="hover:text-gray-300 transition">Blog</Link>
+            <Link href="/contact" className="hover:text-gray-300 transition">Contact</Link>
+            <Link href="/privacy" className="hover:text-gray-300 transition">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-gray-300 transition">Terms of Service</Link>
           </div>
 
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="mx-auto flex items-center justify-center bg-blue-700 hover:bg-blue-800 text-white rounded-full w-12 h-12 shadow-lg transition mb-4 focus:outline-none focus:ring-2 focus:ring-blue-400"
+            className="mx-auto flex items-center justify-center bg-gray-800 hover:bg-gray-900 text-white rounded-full w-12 h-12 shadow-lg transition mb-4 focus:outline-none focus:ring-2 focus:ring-gray-400"
             aria-label="Scroll to top"
             style={{ position: 'relative', top: 0 }}
           >
@@ -185,7 +185,7 @@ export default function RootLayout({
           </button>
           <div className="w-full flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 mt-8 border-t border-gray-800 pt-4 gap-2">
             <span>&copy; {new Date().getFullYear()} AlphaLinkCall. All rights reserved.</span>
-            <span>Designed with ❤️ by <a href="https://www.linkedin.com/in/hadley-shapiro/" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">WebDev</a></span>
+            <span>Designed with ❤️ by <a href="https://www.linkedin.com/in/hadley-shapiro/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400">WebDev</a></span>
           </div>
         </footer>
         <div className="fixed bottom-6 left-6 z-50 max-w-xs w-full">

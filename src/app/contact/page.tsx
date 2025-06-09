@@ -52,7 +52,7 @@ export default function Contact() {
             <label htmlFor="message" className="block text-gray-700 font-semibold mb-1">Message</label>
             <textarea id="message" name="message" rows={4} required className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200 text-black" />
           </div>
-          <button type="submit" className="w-full px-6 py-3 bg-blue-700 text-white rounded-full font-semibold text-lg shadow hover:bg-blue-800 transition">Send Message</button>
+          <button type="submit" className="w-full px-6 py-3 bg-gradient-to-r from-gray-800 to-gray-600 text-white rounded-full font-semibold text-lg shadow hover:from-gray-900 hover:to-gray-700 transition">Send Message</button>
           {status !== "" && <div className="text-center text-green-600 font-semibold mt-2">{status}</div>}
         </form>
         {/* Map & Address */}

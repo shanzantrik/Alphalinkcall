@@ -11,7 +11,7 @@ import FAQAccordion from "../components/FAQAccordion";
 export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-100 via-white to-blue-50 flex flex-col items-center justify-center px-4 pt-10 w-full">
+    <div className="min-h-screen bg-gradient-to-b from-gray-100 via-gray-200 to-gray-300 flex flex-col items-center justify-center px-4 pt-10 w-full">
       {/* WhatsApp Floating Button */}
       <a
         href="https://wa.me/61414626109"
@@ -27,8 +27,8 @@ export default function Home() {
       {/* Floating Book a Free Consultation Button */}
       <button
         onClick={() => setModalOpen(true)}
-        className="fixed z-50 top-1/3 right-6 md:right-10 bg-gradient-to-r from-blue-700 to-blue-500 text-white rounded-full shadow-lg flex items-center gap-3 px-6 py-4 font-bold text-lg animate-bounce hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-blue-300"
-        style={{ boxShadow: '0 8px 32px 0 rgba(30, 64, 175, 0.18)' }}
+        className="fixed z-50 top-1/3 right-6 md:right-10 bg-gradient-to-r from-gray-800 to-gray-600 text-white rounded-full shadow-lg flex items-center gap-3 px-6 py-4 font-bold text-lg animate-bounce hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-gray-400"
+        style={{ boxShadow: '0 8px 32px 0 rgba(44, 47, 51, 0.18)' }}
         aria-label="Book a Free Consultation"
       >
         <span className="inline-flex items-center justify-center text-2xl">
@@ -46,18 +46,18 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <span className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-blue-100 text-blue-700 rounded-full font-semibold text-sm shadow">
-            <FaPhoneAlt className="text-blue-600" /> AlphaLinkCall
+          <span className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-gray-200 text-gray-700 rounded-full font-semibold text-sm shadow">
+            <FaPhoneAlt className="text-gray-700" /> AlphaLinkCall
           </span>
-          <h1 className="text-5xl md:text-6xl font-extrabold text-blue-900 mb-6 leading-tight drop-shadow-sm">
-            Empowering Your Business, <span className="text-blue-600">One Call at a Time</span>
+          <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight drop-shadow-sm">
+            Empowering Your Business, <span className="text-gray-700">One Call at a Time</span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-xl">
             At AlphaLinkCall, every call is a chance to strengthen your customer relationships. We extend your brand&apos;s commitment to exceptional service, ensuring each caller receives the attention they deserve.
           </p>
           <button
             onClick={() => setModalOpen(true)}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-700 to-blue-500 text-white rounded-full font-bold text-lg shadow hover:from-blue-800 hover:to-blue-600 transition"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-gray-800 to-gray-600 text-white rounded-full font-bold text-lg shadow hover:from-gray-900 hover:to-gray-700 transition"
           >
             <FaPhoneAlt className="text-white text-base" /> Request a Free Consultation
           </button>
@@ -81,7 +81,7 @@ export default function Home() {
               animate={{ y: [0, -12, 0, 12, 0] }}
               transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 0 }}
             >
-              <FaPhoneAlt className="text-blue-600 text-2xl md:text-3xl drop-shadow" />
+              <FaPhoneAlt className="text-gray-700 text-2xl md:text-3xl drop-shadow" />
             </motion.div>
             {/* Right */}
             <motion.div
@@ -90,7 +90,7 @@ export default function Home() {
               animate={{ y: [0, -12, 0, 12, 0] }}
               transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut", delay: 0.2 }}
             >
-              <FaComments className="text-blue-400 text-2xl md:text-3xl drop-shadow" />
+              <FaComments className="text-gray-400 text-2xl md:text-3xl drop-shadow" />
             </motion.div>
             {/* Bottom */}
             <motion.div
@@ -99,7 +99,7 @@ export default function Home() {
               animate={{ y: [0, -12, 0, 12, 0] }}
               transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 0.4 }}
             >
-              <FaHeadset className="text-blue-800 text-2xl md:text-3xl drop-shadow" />
+              <FaHeadset className="text-gray-800 text-2xl md:text-3xl drop-shadow" />
             </motion.div>
             {/* Left */}
             <motion.div
@@ -108,7 +108,7 @@ export default function Home() {
               animate={{ y: [0, -12, 0, 12, 0] }}
               transition={{ repeat: Infinity, duration: 5.5, ease: "easeInOut", delay: 0.6 }}
             >
-              <FaEnvelope className="text-blue-400 text-2xl md:text-3xl drop-shadow" />
+              <FaEnvelope className="text-gray-400 text-2xl md:text-3xl drop-shadow" />
             </motion.div>
           </>
           {/* Human Figure in Center */}
@@ -118,12 +118,12 @@ export default function Home() {
             animate={{ scale: [0.9, 1, 0.98, 1], opacity: [0.8, 1, 1, 1] }}
             transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
           >
-            <FaUserCircle className="text-blue-700 text-[72px] md:text-[120px] drop-shadow-lg" />
+            <FaUserCircle className="text-gray-700 text-[72px] md:text-[120px] drop-shadow-lg" />
           </motion.div>
           {/* Animated Marquee Text */}
           <motion.div className="w-full absolute left-0 -bottom-12 md:-bottom-16 overflow-hidden" initial={false} animate={{}}>
             <motion.div
-              className="flex gap-8 md:gap-16 text-blue-800 font-bold text-base md:text-lg whitespace-nowrap"
+              className="flex gap-8 md:gap-16 text-gray-800 font-bold text-base md:text-lg whitespace-nowrap"
               animate={{ x: ["100%", "-100%"] }}
               transition={{ repeat: Infinity, duration: 18, ease: "linear" }}
             >
@@ -150,9 +150,9 @@ export default function Home() {
             <Image src="/alpha4.webp" alt="Services" fill className="object-cover w-full h-full group-hover:scale-105 transition duration-300" />
           </div>
           <div className="p-6 flex flex-col items-start">
-            <h2 className="text-2xl font-bold text-blue-900 mb-2">Call Answering Services</h2>
+            <h2 className="text-2xl font-bold text-gray-900 mb-2">Call Answering Services</h2>
             <p className="text-gray-800 mb-4 flex-1">Never miss a customer call. 24/7 professional call answering for plumbers, electricians, and trades.</p>
-            <span className="text-blue-900 font-semibold group-hover:underline">Learn more →</span>
+            <span className="text-gray-900 font-semibold group-hover:underline">Learn more →</span>
           </div>
         </Link>
         {/* Technology */}
@@ -180,7 +180,7 @@ export default function Home() {
       </section>
 
       {/* Value Props Section */}
-      <section className="relative w-full py-24 flex flex-col items-center justify-center overflow-hidden bg-blue-50">
+      <section className="relative w-full py-24 flex flex-col items-center justify-center overflow-hidden bg-gray-50 rounded-[20px]" style={{ borderRadius: 20 }}>
         {/* Top Wavy SVG */}
         <div className="absolute top-0 left-0 w-full -z-10">
           <svg viewBox="0 0 1440 120" className="w-full h-[120px]" preserveAspectRatio="none">
@@ -189,7 +189,7 @@ export default function Home() {
         </div>
         {/* Animated Headline */}
         <motion.h2
-          className="text-3xl md:text-4xl font-extrabold text-blue-900 mb-12 text-center z-10"
+          className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-12 text-center z-10"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -202,8 +202,8 @@ export default function Home() {
         <div className="w-full max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 z-10">
           {/* Card 1 */}
           <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-start gap-4">
-            <FaRegSmile className="text-blue-500 text-4xl mb-2" />
-            <h2 className="text-xl font-bold text-blue-800">Personalized Service</h2>
+            <FaRegSmile className="text-gray-500 text-4xl mb-2" />
+            <h2 className="text-xl font-bold text-gray-800">Personalized Service</h2>
             <p className="text-gray-700">Agents briefed on your business, products, and values. Every call handled with care, following your guidelines.</p>
           </div>
           {/* Card 2 */}
@@ -233,8 +233,8 @@ export default function Home() {
         </div>
       </section>
       {/* Flexible Solutions Section */}
-      <section className="relative w-full py-16 flex flex-col items-center justify-center overflow-visible">
-        <div className="relative w-full max-w-5xl mx-auto rounded-2xl overflow-hidden" style={{ borderRadius: 20, background: 'linear-gradient(135deg, #2563eb 0%, #3b82f6 60%, #2dd4bf 100%)' }}>
+      <section className="relative w-full py-16 flex flex-col items-center justify-center overflow-visible bg-gradient-to-r">
+        <div className="relative w-full max-w-5xl mx-auto rounded-2xl overflow-hidden" style={{ borderRadius: 20, background: 'linear-gradient(135deg, #23272a 0%, #444950 100%)' }}>
           <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-10 text-center pt-10">Flexible Solutions for Your Evolving Needs</h2>
           <div className="w-full max-w-2xl mx-auto flex flex-col gap-8 items-center pb-10">
             <motion.div
@@ -289,25 +289,25 @@ export default function Home() {
         </div>
       </section>
       {/* Trust Section */}
-      <section className="relative w-full py-20 bg-gradient-to-br from-gray-50 to-blue-100 flex flex-col md:flex-row items-center justify-center gap-12 rounded-2xl my-12 overflow-hidden">
+      <section className="relative w-full py-20 bg-gradient-to-br from-gray-50 to-gray-100 flex flex-col md:flex-row items-center justify-center gap-12 rounded-2xl my-12 overflow-hidden">
         {/* Text/values column - now first */}
         <div className="flex-1 flex flex-col items-start justify-center max-w-lg order-1 md:order-none pl-4 md:pl-16">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-blue-900 mb-6">Your Trust, Our Priority</h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6">Your Trust, Our Priority</h2>
           <ul className="grid grid-cols-1 gap-4 mb-8 w-full">
-            <li className="flex items-center gap-3 text-lg text-blue-800 font-semibold bg-white/80 rounded-xl px-5 py-3 shadow">
+            <li className="flex items-center gap-3 text-lg text-gray-800 font-semibold bg-white/80 rounded-xl px-5 py-3 shadow">
               <FaRegCheckCircle className="text-teal-500 text-2xl" /> Strict confidentiality protocols
             </li>
-            <li className="flex items-center gap-3 text-lg text-blue-800 font-semibold bg-white/80 rounded-xl px-5 py-3 shadow">
-              <FaRegSmile className="text-blue-400 text-2xl" /> Regular quality assessments
+            <li className="flex items-center gap-3 text-lg text-gray-800 font-semibold bg-white/80 rounded-xl px-5 py-3 shadow">
+              <FaRegSmile className="text-gray-400 text-2xl" /> Regular quality assessments
             </li>
-            <li className="flex items-center gap-3 text-lg text-blue-800 font-semibold bg-white/80 rounded-xl px-5 py-3 shadow">
+            <li className="flex items-center gap-3 text-lg text-gray-800 font-semibold bg-white/80 rounded-xl px-5 py-3 shadow">
               <FaRegListAlt className="text-orange-400 text-2xl" /> Clear, concise reporting
             </li>
           </ul>
           <motion.a
             href="#"
             onClick={e => { e.preventDefault(); setModalOpen(true); }}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-700 to-blue-500 text-white rounded-full font-bold text-lg shadow hover:from-blue-800 hover:to-blue-600 transition mt-4"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-gray-700 to-gray-500 text-white rounded-full font-bold text-lg shadow hover:from-gray-800 hover:to-gray-600 transition mt-4"
             whileHover={{ scale: 1.08 }}
             animate={{ scale: [1, 1.05, 1], boxShadow: [
               '0 0 0px #3B82F6',
@@ -326,12 +326,15 @@ export default function Home() {
             alt="Trust and Partnership"
             width={600}
             height={256}
-            className="rounded-2xl shadow-lg w-full max-w-md object-cover border-4 border-blue-100"
+            className="rounded-2xl shadow-lg w-full max-w-md object-cover border-4 border-gray-100"
           />
         </div>
       </section>
       {/* FAQ Section */}
-      <FAQAccordion />
+      <section className="w-full max-w-3xl mx-auto my-16 px-4">
+        <h2 className="text-2xl md:text-3xl font-extrabold bg-gradient-to-r  text-transparent bg-clip-text mb-8 text-center">Frequently Asked Questions</h2>
+        <FAQAccordion />
+      </section>
       </div>
     </div>
   );

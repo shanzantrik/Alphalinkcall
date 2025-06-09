@@ -55,7 +55,7 @@ export default function About() {
               <li>No long contracts</li>
               <li>All core features</li>
             </ul>
-            <button onClick={() => setModalOpen(true)} className="px-6 py-3 bg-blue-700 text-white rounded-full font-bold shadow hover:bg-blue-800 transition">Start Free Consultation</button>
+            <button onClick={() => setModalOpen(true)} className="px-6 py-3 bg-gradient-to-r from-gray-800 to-gray-600 text-white rounded-full font-bold shadow hover:from-gray-900 hover:to-gray-700 transition">Start Free Consultation</button>
           </div>
           <div className="bg-white rounded-2xl shadow-lg p-8 flex-1 flex flex-col items-center border-2 border-blue-400 scale-105">
             <h3 className="text-xl font-bold text-blue-800 mb-2">Full Service</h3>
@@ -66,7 +66,7 @@ export default function About() {
               <li>Priority support</li>
               <li>All features included</li>
             </ul>
-            <button onClick={() => setModalOpen(true)} className="px-6 py-3 bg-blue-700 text-white rounded-full font-bold shadow hover:bg-blue-800 transition">Book a Demo</button>
+            <button onClick={() => setModalOpen(true)} className="px-6 py-3 bg-gradient-to-r from-gray-800 to-gray-600 text-white rounded-full font-bold shadow hover:from-gray-900 hover:to-gray-700 transition">Book a Demo</button>
           </div>
         </div>
       </section>
@@ -96,7 +96,7 @@ export default function About() {
       <div className="text-center mt-10">
         <button
           onClick={() => setModalOpen(true)}
-          className="inline-block px-8 py-4 bg-blue-700 text-white rounded-full font-semibold text-lg shadow hover:bg-blue-800 transition"
+          className="inline-block px-8 py-4 bg-gradient-to-r from-gray-800 to-gray-600 text-white rounded-full font-semibold text-lg shadow hover:from-gray-900 hover:to-gray-700 transition"
         >
           Start Your Free Consultation
         </button>

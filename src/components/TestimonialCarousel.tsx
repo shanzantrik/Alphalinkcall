@@ -50,7 +50,7 @@ export default function TestimonialCarousel() {
             <div
               key={t.name}
               className={`flex flex-col items-center bg-white rounded-2xl shadow-lg p-6 transition-all duration-500 ${
-                i === index ? "opacity-100 scale-100" : "opacity-60 scale-95 blur-[1px]"
+                i === index ? "scale-100" : "scale-95"
               } ${i === index ? "z-10" : "z-0"}`}
               style={{ display: i === index || (i === (index + 1) % testimonials.length) || (i === (index + testimonials.length - 1) % testimonials.length) ? "block" : "none" }}
             >

@@ -68,7 +68,7 @@ export default function Services() {
           <p className="text-lg text-gray-700 mb-8">{activeService.desc}</p>
           <button
             onClick={() => setModalOpen(true)}
-            className="px-8 py-4 bg-gradient-to-r from-blue-700 to-blue-500 text-white rounded-full font-bold text-lg shadow hover:from-blue-800 hover:to-blue-600 transition"
+            className="px-8 py-4 bg-gradient-to-r from-gray-800 to-gray-600 text-white rounded-full font-bold text-lg shadow hover:from-gray-900 hover:to-gray-700 transition"
           >
             Book a Free Consultation
           </button>

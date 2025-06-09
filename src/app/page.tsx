@@ -6,6 +6,7 @@ import { useState } from "react";
 import CalendlyModal from "../components/CalendlyModal";
 import Image from "next/image";
 import TestimonialCarousel from "../components/TestimonialCarousel";
+import FAQAccordion from "../components/FAQAccordion";
 
 export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
@@ -23,6 +24,18 @@ export default function Home() {
         <FaWhatsapp className="text-4xl" />
         <span className="absolute bottom-20 right-0 bg-black text-white text-xs rounded px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none">Chat with us on WhatsApp</span>
       </a>
+      {/* Floating Book a Free Consultation Button */}
+      <button
+        onClick={() => setModalOpen(true)}
+        className="fixed z-50 top-1/3 right-6 md:right-10 bg-gradient-to-r from-blue-700 to-blue-500 text-white rounded-full shadow-lg flex items-center gap-3 px-6 py-4 font-bold text-lg animate-bounce hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-blue-300"
+        style={{ boxShadow: '0 8px 32px 0 rgba(30, 64, 175, 0.18)' }}
+        aria-label="Book a Free Consultation"
+      >
+        <span className="inline-flex items-center justify-center text-2xl">
+          <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><rect width="24" height="24" rx="12" fill="#fff" fillOpacity="0.12"/><path d="M16.5 3v2M7.5 3v2M3 8.5h18M5 21h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2Z" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/><circle cx="12" cy="14" r="3" fill="#fff" fillOpacity="0.2"/><circle cx="12" cy="14" r="2" fill="#fff" fillOpacity="0.5"/></svg>
+        </span>
+        <span className="hidden md:inline">Book a Free Consultation</span>
+      </button>
       <CalendlyModal open={modalOpen} onClose={() => setModalOpen(false)} />
       <div className="w-full max-w-7xl mx-auto">
       {/* Hero Section */}
@@ -317,6 +330,8 @@ export default function Home() {
           />
         </div>
       </section>
+      {/* FAQ Section */}
+      <FAQAccordion />
       </div>
     </div>
   );

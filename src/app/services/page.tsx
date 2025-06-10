@@ -9,25 +9,25 @@ const services = [
   {
     title: "Fractional Call Centre Services",
     desc: "Use our team part-time or on-demand. No full-time hires or managing rosters.",
-    img: "/pexels-jep-gambardella-7689734.webp",
+    img: "/service1.webp",
     icon: <FaHeadset className="text-[#f48e1b] mr-2" />,
   },
   {
     title: "After-Hours Call Handling",
     desc: "Night, weekend, and public holiday coverage. Escalation protocols, no voicemail.",
-    img: "/pexels-mart-production-7709271.webp",
+    img: "/services2.webp",
     icon: <FaRegClock className="text-[#f48e1b] mr-2" />,
   },
   {
     title: "Daytime Overflow Support",
     desc: "Backup when you're flat out. Seamless call forwarding, info capture.",
-    img: "/pexels-mart-production-7709251.webp",
+    img: "/services3.webp",
     icon: <FaPhoneAlt className="text-[#f48e1b] mr-2" />,
   },
   {
     title: "Platform Integration",
     desc: "We work inside your systems. Familiar with CRMs, job schedulers, booking platforms. Tailored setup and onboarding.",
-    img: "/alphaplatform2.webp",
+    img: "/services4.webp",
     icon: <FaRegListAlt className="text-[#f48e1b] mr-2" />,
   },
 ];

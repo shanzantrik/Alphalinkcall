@@ -8,7 +8,7 @@ const testimonials = [
     name: "Sarah P.",
     image: "/client1.webp",
     review:
-      "AlphaLinkCall has transformed our business. We never miss a call, and our customers always mention how friendly the agents are!",
+      "AlphaLink has transformed our business. We never miss a call, and our customers always mention how friendly the agents are!",
     stars: 5,
     company: "PlumbRight Solutions",
   },

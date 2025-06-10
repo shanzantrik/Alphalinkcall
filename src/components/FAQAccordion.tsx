@@ -45,8 +45,12 @@ export default function FAQAccordion() {
               onClick={() => setOpen(open === idx ? null : idx)}
             >
               <span className="font-semibold text-blue-800 group-hover:text-blue-600 text-lg">{faq.question}</span>
-              <span className="ml-4 text-blue-400">
-                {open === idx ? <FaChevronUp /> : <FaChevronDown />}
+              <span className="ml-4">
+                {open === idx ? (
+                  <FaChevronUp className="text-[#f48e1b]" />
+                ) : (
+                  <FaChevronDown className="text-[#0054ab]" />
+                )}
               </span>
             </button>
             {open === idx && (

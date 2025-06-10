@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { FaPhoneAlt, FaComments, FaHeadset, FaUserCircle, FaEnvelope, FaRegSmile, FaRegClock, FaRegCheckCircle, FaRegListAlt, FaWhatsapp } from "react-icons/fa";
+import { FaPhoneAlt, FaComments, FaHeadset, FaEnvelope, FaRegSmile, FaRegClock, FaRegCheckCircle, FaRegListAlt, FaWhatsapp } from "react-icons/fa";
 import { useState } from "react";
 import CalendlyModal from "../components/CalendlyModal";
 import Image from "next/image";
@@ -11,30 +11,46 @@ import FAQAccordion from "../components/FAQAccordion";
 export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-100 via-gray-200 to-gray-300 flex flex-col items-center justify-center px-4 pt-10 w-full">
+    <div className="min-h-screen bg-gradient-to-b from-white via-[#f5faff] to-[#eaf4fb] flex flex-col items-center justify-center px-4 pt-10 w-full">
       {/* WhatsApp Floating Button */}
       <a
         href="https://wa.me/61414626109"
             target="_blank"
             rel="noopener noreferrer"
-        className="fixed z-50 bottom-6 right-6 md:bottom-8 md:right-8 bg-green-500 hover:bg-green-600 text-white rounded-full shadow-lg flex items-center justify-center w-16 h-16 transition-all group"
+        className="fixed z-50 bottom-6 right-6 md:bottom-8 md:right-8 bg-[#f48e1b] hover:bg-[#FFD580] text-[#0054ab] rounded-full shadow-lg flex items-center justify-center w-16 h-16 transition-all group"
         title="Chat with us on WhatsApp"
         aria-label="Chat with us on WhatsApp"
       >
         <FaWhatsapp className="text-4xl" />
-        <span className="absolute bottom-20 right-0 bg-black text-white text-xs rounded px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none">Chat with us on WhatsApp</span>
+        <span className="absolute bottom-20 right-0 bg-[#0054ab] text-white text-xs rounded px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none">Chat with us on WhatsApp</span>
       </a>
       {/* Floating Book a Free Consultation Button */}
       <button
         onClick={() => setModalOpen(true)}
-        className="fixed z-50 top-1/3 right-6 md:right-10 bg-gradient-to-r from-gray-800 to-gray-600 text-white rounded-full shadow-lg flex items-center gap-3 px-6 py-4 font-bold text-lg animate-bounce hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-gray-400"
-        style={{ boxShadow: '0 8px 32px 0 rgba(44, 47, 51, 0.18)' }}
+        className="fixed z-50 top-1/3 right-6 md:right-10 bg-gradient-to-r from-[#f48e1b] to-[#ffd580] text-[#0054ab] rounded-full shadow-lg flex items-center gap-3 px-6 py-4 font-bold text-lg animate-bounce hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-[#f48e1b] overflow-hidden"
+        style={{ boxShadow: '0 8px 32px 0 rgba(244, 142, 27, 0.18)' }}
         aria-label="Book a Free Consultation"
       >
-        <span className="inline-flex items-center justify-center text-2xl">
-          <svg width="28" height="28" fill="none" viewBox="0 0 24 24"><rect width="24" height="24" rx="12" fill="#fff" fillOpacity="0.12"/><path d="M16.5 3v2M7.5 3v2M3 8.5h18M5 21h14a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2Z" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/><circle cx="12" cy="14" r="3" fill="#fff" fillOpacity="0.2"/><circle cx="12" cy="14" r="2" fill="#fff" fillOpacity="0.5"/></svg>
+        {/* Animated Shine Overlay */}
+        <span className="absolute inset-0 pointer-events-none">
+          <span className="block w-full h-full animate-shine bg-gradient-to-r from-transparent via-white/60 to-transparent opacity-60" style={{ backgroundSize: '200% 100%' }}></span>
         </span>
-        <span className="hidden md:inline">Book a Free Consultation</span>
+        <span className="inline-flex items-center justify-center text-2xl relative z-10">
+          {/* Calendar Icon SVG */}
+          <svg width="28" height="28" fill="none" viewBox="0 0 24 24">
+            <rect x="3" y="5" width="18" height="16" rx="3" fill="#fff"/>
+            <rect x="3" y="5" width="18" height="16" rx="3" stroke="#f48e1b" strokeWidth="1.5"/>
+            <rect x="7" y="2" width="2" height="4" rx="1" fill="#f48e1b"/>
+            <rect x="15" y="2" width="2" height="4" rx="1" fill="#f48e1b"/>
+            <rect x="7" y="10" width="2" height="2" rx="1" fill="#f48e1b"/>
+            <rect x="11" y="10" width="2" height="2" rx="1" fill="#f48e1b"/>
+            <rect x="15" y="10" width="2" height="2" rx="1" fill="#f48e1b"/>
+            <rect x="7" y="14" width="2" height="2" rx="1" fill="#f48e1b"/>
+            <rect x="11" y="14" width="2" height="2" rx="1" fill="#f48e1b"/>
+            <rect x="15" y="14" width="2" height="2" rx="1" fill="#f48e1b"/>
+          </svg>
+        </span>
+        <span className="hidden md:inline relative z-10">Book a Free Consultation</span>
       </button>
       <CalendlyModal open={modalOpen} onClose={() => setModalOpen(false)} />
       <div className="w-full max-w-7xl mx-auto">
@@ -46,20 +62,20 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <span className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-gray-200 text-gray-700 rounded-full font-semibold text-sm shadow">
-            <FaPhoneAlt className="text-gray-700" /> AlphaLinkCall
+          <span className="inline-flex items-center gap-2 mb-4 px-4 py-2 bg-[#f48e1b] text-[#0054ab] rounded-full font-semibold text-sm shadow">
+            <FaPhoneAlt className="text-[#0054ab]" /> AlphaLink
           </span>
-          <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight drop-shadow-sm">
-            Empowering Your Business, <span className="text-gray-700">One Call at a Time</span>
+          <h1 className="text-5xl md:text-6xl font-extrabold text-[#0054ab] mb-6 leading-tight drop-shadow-sm">
+            Empowering Your Business, <span className="text-[#f48e1b]">One Call at a Time</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-xl">
-            At AlphaLinkCall, every call is a chance to strengthen your customer relationships. We extend your brand&apos;s commitment to exceptional service, ensuring each caller receives the attention they deserve.
+          <p className="text-xl md:text-2xl text-[#0054ab] mb-8 max-w-xl">
+            At AlphaLink, every call is a chance to strengthen your customer relationships. We extend your brand&apos;s commitment to exceptional service, ensuring each caller receives the attention they deserve.
           </p>
           <button
             onClick={() => setModalOpen(true)}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-gray-800 to-gray-600 text-white rounded-full font-bold text-lg shadow hover:from-gray-900 hover:to-gray-700 transition"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#0054ab] to-[#0074d9] text-white rounded-full font-bold text-lg shadow hover:from-[#003366] hover:to-[#0054ab] transition"
           >
-            <FaPhoneAlt className="text-white text-base" /> Request a Free Consultation
+            <FaPhoneAlt className="text-[#f48e1b] text-base" /> Get in Touch
           </button>
         </motion.div>
         {/* Animated Hero Visual - Responsive */}
@@ -81,7 +97,7 @@ export default function Home() {
               animate={{ y: [0, -12, 0, 12, 0] }}
               transition={{ repeat: Infinity, duration: 4, ease: "easeInOut", delay: 0 }}
             >
-              <FaPhoneAlt className="text-gray-700 text-2xl md:text-3xl drop-shadow" />
+              <FaPhoneAlt className="text-[#0054ab] text-2xl md:text-3xl drop-shadow" />
             </motion.div>
             {/* Right */}
             <motion.div
@@ -90,7 +106,7 @@ export default function Home() {
               animate={{ y: [0, -12, 0, 12, 0] }}
               transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut", delay: 0.2 }}
             >
-              <FaComments className="text-gray-400 text-2xl md:text-3xl drop-shadow" />
+              <FaComments className="text-[#f48e1b] text-2xl md:text-3xl drop-shadow" />
             </motion.div>
             {/* Bottom */}
             <motion.div
@@ -99,7 +115,7 @@ export default function Home() {
               animate={{ y: [0, -12, 0, 12, 0] }}
               transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 0.4 }}
             >
-              <FaHeadset className="text-gray-800 text-2xl md:text-3xl drop-shadow" />
+              <FaHeadset className="text-[#0054ab] text-2xl md:text-3xl drop-shadow" />
             </motion.div>
             {/* Left */}
             <motion.div
@@ -108,22 +124,37 @@ export default function Home() {
               animate={{ y: [0, -12, 0, 12, 0] }}
               transition={{ repeat: Infinity, duration: 5.5, ease: "easeInOut", delay: 0.6 }}
             >
-              <FaEnvelope className="text-gray-400 text-2xl md:text-3xl drop-shadow" />
+              <FaEnvelope className="text-[#f48e1b] text-2xl md:text-3xl drop-shadow" />
             </motion.div>
           </>
           {/* Human Figure in Center */}
           <motion.div
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#f3f4f6] rounded-full shadow-lg flex items-center justify-center"
+            style={{ width: 120, height: 120 }}
             initial={{ scale: 0.9, opacity: 0.8 }}
             animate={{ scale: [0.9, 1, 0.98, 1], opacity: [0.8, 1, 1, 1] }}
             transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
           >
-            <FaUserCircle className="text-gray-700 text-[72px] md:text-[120px] drop-shadow-lg" />
+            <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" fill="none" width="80" height="80">
+              <ellipse fill="#f48e1b" cx="20.1" cy="65" rx="6.4" ry="6.4"></ellipse>
+              <ellipse fill="#f48e1b" cx="99.9" cy="65" rx="6.4" ry="6.4"></ellipse>
+              <path fill="#f48e1b" d="M94.1,53.1C93.6,34.8,78.5,20,60,20c-18.5,0-33.5,14.7-34.1,33.1h-4C22.5,32.6,39.3,16,60,16c20.7,0,37.5,16.5,38.1,37.1H94.1z"></path>
+              <path fill="#3F3F3F" d="M69.4,101.8c-2.4,0-4-0.1-4.2-0.1l0.2-2.2c0.2,0,23,1.7,25.8-7.7c3-10.5,1.5-21.5,1.5-21.6l2.2-0.3c0.1,0.4,1.6,11.6-1.6,22.5C90.7,100.7,76.6,101.8,69.4,101.8z"></path>
+              <path fill="#f48e1b" d="M70.4,104H60.2c-0.9,0-1.6-0.7-1.6-1.6v-4c0-0.9,0.7-1.6,1.6-1.6h10.2c0.9,0,1.6,0.7,1.6,1.6v4C72,103.3,71.3,104,70.4,104z"></path>
+              <path fill="#438DFF" d="M28.5,51h-7.1c-2.2,0-4,2-4,4.5v17.9c0,2.5,1.8,4.5,4,4.5h7.1c1.5,0,2.8-1.4,2.8-3.1V54C31.2,52.3,30,51,28.5,51z"></path>
+              <path fill="#438DFF" d="M98.7,51h-7.1c-1.5,0-2.8,1.4-2.8,3.1v20.6c0,1.7,1.2,3.1,2.8,3.1h7.1c2.2,0,4-2,4-4.5v-18C102.6,52.9,100.8,51,98.7,51z"></path>
+              <path fill="#438DFF" d="M68.4,70.8l-1.7,1.7c-2.6,2.6-5.2,4.3-7.3,2.2L47.2,62.5c-2.2-2.2-0.5-4.7,2.2-7.3l1.7-1.7l-8.3-8.3l-2.4,2.4c-4.3,4.3-4.3,11.1,0,15.3L59,81.5c4.3,4.3,11.1,4.3,15.3,0l2.4-2.4L68.4,70.8z"></path>
+              <path fill="#3D81E2" d="M52.5,52.7l-8.8-8.8c-0.8-0.8-2.1-0.8-2.9,0l-1.5,1.5c-0.8,0.8-0.8,2.1,0,2.9l8.8,8.8c0.8,0.8,2.1,0.8,2.9,0l1.5-1.5C53.3,54.9,53.3,53.6,52.5,52.7z"></path>
+              <path fill="#3D81E2" d="M78,78.2l-8.8-8.8c-0.8-0.8-2.1-0.8-2.9,0l-1.5,1.5c-0.8,0.8-0.8,2.1,0,2.9l8.8,8.8c0.8,0.8,2.1,0.8,2.9,0l1.5-1.5C78.8,80.3,78.8,79,78,78.2z"></path>
+              <path fill="#438DFF" d="M58.9,54.3c-0.2-0.2-0.4-0.5-0.4-0.7c-0.2-0.9,0.3-1.6,1.2-1.9c3-0.7,6,0.2,8.1,2.3s3,5.2,2.3,8.1c-0.2,0.9-1,1.3-1.9,1.2c-0.9-0.2-1.3-1-1.2-1.9c0.4-1.9-0.1-3.9-1.5-5.3c-1.4-1.4-3.3-2-5.3-1.5C59.8,54.8,59.3,54.6,58.9,54.3z"></path>
+              <path fill="#438DFF" d="M57.6,48.2c-0.2-0.2-0.4-0.5-0.4-0.7c-0.2-0.9,0.3-1.6,1.2-1.9c5.1-1.2,10.3,0.3,13.9,4c3.7,3.7,5.2,8.8,4,13.9c-0.2,0.9-1,1.4-1.9,1.2c-0.9-0.2-1.4-1-1.2-1.9c0.9-4-0.3-8.1-3.1-11s-7-4.1-11-3.1C58.5,48.7,58,48.6,57.6,48.2z"></path>
+              <path fill="#438DFF" d="M56.3,42.1c-0.2-0.2-0.4-0.5-0.4-0.7c-0.2-0.9,0.3-1.6,1.2-1.9c7.1-1.6,14.5,0.5,19.7,5.6c5.2,5.2,7.3,12.5,5.6,19.7c-0.2,0.9-1,1.4-1.9,1.2c-0.9-0.2-1.4-1-1.2-1.9c1.4-6.1-0.4-12.4-4.8-16.7c-4.4-4.4-10.7-6.2-16.7-4.8C57.2,42.7,56.6,42.5,56.3,42.1z"></path>
+            </svg>
           </motion.div>
           {/* Animated Marquee Text */}
           <motion.div className="w-full absolute left-0 -bottom-12 md:-bottom-16 overflow-hidden" initial={false} animate={{}}>
             <motion.div
-              className="flex gap-8 md:gap-16 text-gray-800 font-bold text-base md:text-lg whitespace-nowrap"
+              className="flex gap-8 md:gap-16 text-[#0054ab] font-bold text-base md:text-lg whitespace-nowrap"
               animate={{ x: ["100%", "-100%"] }}
               transition={{ repeat: Infinity, duration: 18, ease: "linear" }}
             >
@@ -145,42 +176,42 @@ export default function Home() {
       {/* Subpages Showcase */}
       <section className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 py-10">
         {/* Services */}
-        <Link href="/services" className="group block rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition bg-white">
+        <Link href="/services" className="group block rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition bg-white border-2 border-[#eaf4fb]">
           <div className="relative w-full h-56">
             <Image src="/alpha4.webp" alt="Services" fill className="object-cover w-full h-full group-hover:scale-105 transition duration-300" />
           </div>
           <div className="p-6 flex flex-col items-start">
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">Call Answering Services</h2>
-            <p className="text-gray-800 mb-4 flex-1">Never miss a customer call. 24/7 professional call answering for plumbers, electricians, and trades.</p>
-            <span className="text-gray-900 font-semibold group-hover:underline">Learn more →</span>
+            <h2 className="text-2xl font-bold text-[#0054ab] mb-2">Call Answering Services</h2>
+            <p className="text-[#0054ab] mb-4 flex-1">Never miss a customer call. 24/7 professional call answering for plumbers, electricians, and trades.</p>
+            <span className="text-[#0054ab] font-semibold group-hover:text-[#f48e1b] group-hover:underline">Learn more →</span>
           </div>
         </Link>
         {/* Technology */}
-        <Link href="/technology" className="group block rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition bg-white">
+        <Link href="/technology" className="group block rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition bg-white border-2 border-[#eaf4fb]">
           <div className="relative w-full h-56">
             <Image src="/alpha5.webp" alt="Smart Call Routing" fill className="object-cover w-full h-full group-hover:scale-105 transition duration-300" />
           </div>
           <div className="p-6 flex flex-col items-start">
-            <h2 className="text-2xl font-bold text-green-900 mb-2">Smart Call Routing</h2>
-            <p className="text-gray-800 mb-4 flex-1">AI-powered call routing and message delivery. Get urgent jobs to the right team, fast.</p>
-            <span className="text-green-900 font-semibold group-hover:underline">Learn more →</span>
+            <h2 className="text-2xl font-bold text-[#0054ab] mb-2">Smart Call Routing</h2>
+            <p className="text-[#0054ab] mb-4 flex-1">AI-powered call routing and message delivery. Get urgent jobs to the right team, fast.</p>
+            <span className="text-[#0054ab] font-semibold group-hover:text-[#f48e1b] group-hover:underline">Learn more →</span>
           </div>
         </Link>
         {/* Industries */}
-        <Link href="/industries" className="group block rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition bg-white">
+        <Link href="/industries" className="group block rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition bg-white border-2 border-[#eaf4fb]">
           <div className="relative w-full h-56">
             <Image src="/alpha6.webp" alt="Industries" fill className="object-cover w-full h-full group-hover:scale-105 transition duration-300" />
           </div>
           <div className="p-6 flex flex-col items-start">
-            <h2 className="text-2xl font-bold text-orange-900 mb-2">For Trades & Services</h2>
-            <p className="text-gray-800 mb-4 flex-1">Specialized support for plumbers, electricians, HVAC, and home service pros. Industry-focused solutions.</p>
-            <span className="text-orange-900 font-semibold group-hover:underline">See how it works →</span>
+            <h2 className="text-2xl font-bold text-[#0054ab] mb-2">For Trades & Services</h2>
+            <p className="text-[#0054ab] mb-4 flex-1">Specialized support for plumbers, electricians, HVAC, and home service pros. Industry-focused solutions.</p>
+            <span className="text-[#0054ab] font-semibold group-hover:text-[#f48e1b] group-hover:underline">See how it works →</span>
           </div>
         </Link>
       </section>
 
       {/* Value Props Section */}
-      <section className="relative w-full py-24 flex flex-col items-center justify-center overflow-hidden bg-gray-50 rounded-[20px]" style={{ borderRadius: 20 }}>
+      <section className="relative w-full py-24 flex flex-col items-center justify-center overflow-hidden bg-white rounded-[20px] border-2 border-[#eaf4fb]" style={{ borderRadius: 20 }}>
         {/* Top Wavy SVG */}
         <div className="absolute top-0 left-0 w-full -z-10">
           <svg viewBox="0 0 1440 120" className="w-full h-[120px]" preserveAspectRatio="none">
@@ -189,40 +220,40 @@ export default function Home() {
         </div>
         {/* Animated Headline */}
         <motion.h2
-          className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-12 text-center z-10"
+          className="text-3xl md:text-4xl font-extrabold text-[#0054ab] mb-12 text-center z-10"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          Why Choose AlphaLinkCall for Your Business?
+          Why Choose AlphaLink for Your Business?
         </motion.h2>
         {/* Testimonial Carousel */}
         <TestimonialCarousel />
-        <div className="w-full max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 z-10">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-10 z-10 px-4 md:px-16">
           {/* Card 1 */}
-          <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-start gap-4">
-            <FaRegSmile className="text-gray-500 text-4xl mb-2" />
-            <h2 className="text-xl font-bold text-gray-800">Personalized Service</h2>
-            <p className="text-gray-700">Agents briefed on your business, products, and values. Every call handled with care, following your guidelines.</p>
+          <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-start gap-4 border-2 border-[#0054ab]">
+            <FaRegSmile className="text-[#f48e1b] text-4xl mb-2" />
+            <h2 className="text-xl font-bold text-[#0054ab]">Personalized Service</h2>
+            <p className="text-[#0054ab]">Agents briefed on your business, products, and values. Every call handled with care, following your guidelines.</p>
           </div>
           {/* Card 2 */}
-          <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-start gap-4">
-            <FaRegClock className="text-green-500 text-4xl mb-2" />
-            <h2 className="text-xl font-bold text-green-800">Reliable Support</h2>
-            <p className="text-gray-700">Extended availability beyond regular hours. Efficient call handling and overflow support during peak periods.</p>
+          <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-start gap-4 border-2 border-[#0054ab]">
+            <FaRegClock className="text-[#f48e1b] text-4xl mb-2" />
+            <h2 className="text-xl font-bold text-[#0054ab]">Reliable Support</h2>
+            <p className="text-[#0054ab]">Extended availability beyond regular hours. Efficient call handling and overflow support during peak periods.</p>
           </div>
           {/* Card 3 */}
-          <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-start gap-4">
-            <FaRegListAlt className="text-orange-500 text-4xl mb-2" />
-            <h2 className="text-xl font-bold text-orange-800">Accurate Information</h2>
-            <p className="text-gray-700">Agents trained to collect essential information efficiently. Detailed message taking and quick escalation of urgent matters.</p>
+          <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-start gap-4 border-2 border-[#0054ab]">
+            <FaRegListAlt className="text-[#f48e1b] text-4xl mb-2" />
+            <h2 className="text-xl font-bold text-[#0054ab]">Accurate Information</h2>
+            <p className="text-[#0054ab]">Agents trained to collect essential information efficiently. Detailed message taking and quick escalation of urgent matters.</p>
           </div>
           {/* Card 4 */}
-          <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-start gap-4">
-            <FaRegCheckCircle className="text-teal-500 text-4xl mb-2" />
-            <h2 className="text-xl font-bold text-teal-800">Technology Enhanced</h2>
-            <p className="text-gray-700">Efficient call routing, secure message delivery, and user-friendly interfaces for easy management of your account.</p>
+          <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col items-start gap-4 border-2 border-[#0054ab]">
+            <FaRegCheckCircle className="text-[#f48e1b] text-4xl mb-2" />
+            <h2 className="text-xl font-bold text-[#0054ab]">Technology Enhanced</h2>
+            <p className="text-[#0054ab]">Efficient call routing, secure message delivery, and user-friendly interfaces for easy management of your account.</p>
           </div>
         </div>
         {/* Bottom Wavy SVG */}
@@ -233,90 +264,90 @@ export default function Home() {
         </div>
       </section>
       {/* Flexible Solutions Section */}
-      <section className="relative w-full py-16 flex flex-col items-center justify-center overflow-visible bg-gradient-to-r">
-        <div className="relative w-full max-w-5xl mx-auto rounded-2xl overflow-hidden" style={{ borderRadius: 20, background: 'linear-gradient(135deg, #23272a 0%, #444950 100%)' }}>
+      <section className="relative w-full py-16 flex flex-col items-center justify-center overflow-visible">
+        <div className="relative w-full rounded-2xl overflow-hidden" style={{ borderRadius: 20, background: 'linear-gradient(135deg, #003366 0%, #0054ab 100%)' }}>
           <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-10 text-center pt-10">Flexible Solutions for Your Evolving Needs</h2>
-          <div className="w-full max-w-2xl mx-auto flex flex-col gap-8 items-center pb-10">
+          <div className="w-full flex flex-col gap-8 items-center pb-10 px-4 md:px-16">
             <motion.div
-              className="flex items-center gap-4 px-8 py-4 bg-white/10 rounded-xl shadow text-white text-lg font-semibold w-full"
+              className="flex items-center gap-4 px-8 py-4 bg-white/10 rounded-xl shadow text-white text-lg font-semibold w-full border border-[#f48e1b]"
               animate={{ y: [0, -10, 0, 10, 0] }}
               transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
             >
-              <FaRegCheckCircle className="text-green-300 text-3xl" />
+              <FaRegCheckCircle className="text-[#f48e1b] text-3xl" />
               Scalable services that grow with your business
             </motion.div>
             <motion.div
-              className="flex items-center gap-4 px-8 py-4 bg-white/10 rounded-xl shadow text-white text-lg font-semibold w-full"
+              className="flex items-center gap-4 px-8 py-4 bg-white/10 rounded-xl shadow text-white text-lg font-semibold w-full border border-[#f48e1b]"
               animate={{ y: [0, 10, 0, -10, 0] }}
               transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut" }}
             >
-              <FaRegListAlt className="text-yellow-200 text-3xl" />
+              <FaRegListAlt className="text-[#f48e1b] text-3xl" />
               Transparent pricing with no hidden fees
             </motion.div>
             <motion.div
-              className="flex items-center gap-4 px-8 py-4 bg-white/10 rounded-xl shadow text-white text-lg font-semibold w-full"
+              className="flex items-center gap-4 px-8 py-4 bg-white/10 rounded-xl shadow text-white text-lg font-semibold w-full border border-[#f48e1b]"
               animate={{ y: [0, -8, 0, 8, 0] }}
               transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
             >
-              <FaRegClock className="text-blue-200 text-3xl" />
+              <FaRegClock className="text-[#f48e1b] text-3xl" />
               Start with basic services and add features as needed
             </motion.div>
             <motion.div
-              className="flex items-center gap-4 px-8 py-4 bg-white/10 rounded-xl shadow text-white text-lg font-semibold w-full"
+              className="flex items-center gap-4 px-8 py-4 bg-white/10 rounded-xl shadow text-white text-lg font-semibold w-full border border-[#f48e1b]"
               animate={{ y: [0, 8, 0, -8, 0] }}
               transition={{ repeat: Infinity, duration: 5.5, ease: "easeInOut" }}
             >
-              <FaRegSmile className="text-pink-200 text-3xl" />
+              <FaRegSmile className="text-[#f48e1b] text-3xl" />
               Friendly support for every stage of your business
             </motion.div>
             <motion.div
-              className="flex items-center gap-4 px-8 py-4 bg-white/10 rounded-xl shadow text-white text-lg font-semibold w-full"
+              className="flex items-center gap-4 px-8 py-4 bg-white/10 rounded-xl shadow text-white text-lg font-semibold w-full border border-[#f48e1b]"
               animate={{ y: [0, -6, 0, 6, 0] }}
               transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
             >
-              <FaHeadset className="text-teal-200 text-3xl" />
+              <FaHeadset className="text-[#f48e1b] text-3xl" />
               24/7 availability for urgent calls
             </motion.div>
             <motion.div
-              className="flex items-center gap-4 px-8 py-4 bg-white/10 rounded-xl shadow text-white text-lg font-semibold w-full"
+              className="flex items-center gap-4 px-8 py-4 bg-white/10 rounded-xl shadow text-white text-lg font-semibold w-full border border-[#f48e1b]"
               animate={{ y: [0, 6, 0, -6, 0] }}
               transition={{ repeat: Infinity, duration: 6.5, ease: "easeInOut" }}
             >
-              <FaPhoneAlt className="text-indigo-200 text-3xl" />
+              <FaPhoneAlt className="text-[#f48e1b] text-3xl" />
               Seamless integration with your workflow
             </motion.div>
           </div>
         </div>
       </section>
       {/* Trust Section */}
-      <section className="relative w-full py-20 bg-gradient-to-br from-gray-50 to-gray-100 flex flex-col md:flex-row items-center justify-center gap-12 rounded-2xl my-12 overflow-hidden">
+      <section className="relative w-full py-20 bg-gradient-to-br from-white to-[#f5faff] flex flex-col md:flex-row items-center justify-center gap-12 rounded-2xl my-12 overflow-hidden">
         {/* Text/values column - now first */}
         <div className="flex-1 flex flex-col items-start justify-center max-w-lg order-1 md:order-none pl-4 md:pl-16">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6">Your Trust, Our Priority</h2>
+          <h2 className="text-3xl md:text-4xl font-extrabold text-[#0054ab] mb-6">Your Trust, Our Priority</h2>
           <ul className="grid grid-cols-1 gap-4 mb-8 w-full">
-            <li className="flex items-center gap-3 text-lg text-gray-800 font-semibold bg-white/80 rounded-xl px-5 py-3 shadow">
-              <FaRegCheckCircle className="text-teal-500 text-2xl" /> Strict confidentiality protocols
+            <li className="flex items-center gap-3 text-lg text-white font-semibold bg-[#0054ab]/80 rounded-xl px-5 py-3 shadow border border-[#f48e1b]">
+              <FaRegCheckCircle className="text-[#f48e1b] text-2xl" /> Strict confidentiality protocols
             </li>
-            <li className="flex items-center gap-3 text-lg text-gray-800 font-semibold bg-white/80 rounded-xl px-5 py-3 shadow">
-              <FaRegSmile className="text-gray-400 text-2xl" /> Regular quality assessments
+            <li className="flex items-center gap-3 text-lg text-white font-semibold bg-[#0054ab]/80 rounded-xl px-5 py-3 shadow border border-[#f48e1b]">
+              <FaRegSmile className="text-[#f48e1b] text-2xl" /> Regular quality assessments
             </li>
-            <li className="flex items-center gap-3 text-lg text-gray-800 font-semibold bg-white/80 rounded-xl px-5 py-3 shadow">
-              <FaRegListAlt className="text-orange-400 text-2xl" /> Clear, concise reporting
+            <li className="flex items-center gap-3 text-lg text-white font-semibold bg-[#0054ab]/80 rounded-xl px-5 py-3 shadow border border-[#f48e1b]">
+              <FaRegListAlt className="text-[#f48e1b] text-2xl" /> Clear, concise reporting
             </li>
           </ul>
           <motion.a
             href="#"
             onClick={e => { e.preventDefault(); setModalOpen(true); }}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-gray-700 to-gray-500 text-white rounded-full font-bold text-lg shadow hover:from-gray-800 hover:to-gray-600 transition mt-4"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#0054ab] to-[#0074d9] text-white rounded-full font-bold text-lg shadow hover:from-[#003366] hover:to-[#0054ab] transition mt-4 focus:ring-4 focus:ring-[#f48e1b]"
             whileHover={{ scale: 1.08 }}
             animate={{ scale: [1, 1.05, 1], boxShadow: [
-              '0 0 0px #3B82F6',
-              '0 0 16px #3B82F6',
-              '0 0 0px #3B82F6'
+              '0 0 0px #f48e1b',
+              '0 0 16px #f48e1b',
+              '0 0 0px #f48e1b'
             ] }}
             transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
           >
-            <FaPhoneAlt className="text-white text-base" /> Experience the AlphaLinkCall Difference
+            <FaPhoneAlt className="text-[#f48e1b] text-base" /> Experience the AlphaLink Difference
           </motion.a>
         </div>
         {/* Image column - now second */}
@@ -326,13 +357,13 @@ export default function Home() {
             alt="Trust and Partnership"
             width={600}
             height={256}
-            className="rounded-2xl shadow-lg w-full max-w-md object-cover border-4 border-gray-100"
+            className="rounded-2xl shadow-lg w-full max-w-md object-cover border-4 border-[#f48e1b]"
           />
         </div>
       </section>
       {/* FAQ Section */}
       <section className="w-full max-w-3xl mx-auto my-16 px-4">
-        <h2 className="text-2xl md:text-3xl font-extrabold bg-gradient-to-r  text-transparent bg-clip-text mb-8 text-center">Frequently Asked Questions</h2>
+
         <FAQAccordion />
       </section>
       </div>

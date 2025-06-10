@@ -74,7 +74,7 @@ export default function Industries() {
       <div className="text-center mt-10">
         <button
           onClick={() => setModalOpen(true)}
-          className="inline-block px-8 py-4 bg-gradient-to-r from-gray-800 to-gray-600 text-white rounded-full font-semibold text-lg shadow hover:from-gray-900 hover:to-gray-700 transition"
+          className="inline-block px-8 py-4 bg-blue-700 text-white rounded-full font-semibold text-lg shadow hover:bg-blue-800 transition"
         >
           Request an Industry Case Study
         </button>

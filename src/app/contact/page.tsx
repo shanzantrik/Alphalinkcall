@@ -52,14 +52,14 @@ export default function Contact() {
             <label htmlFor="message" className="block text-gray-700 font-semibold mb-1">Message</label>
             <textarea id="message" name="message" rows={4} required className="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-200 text-black" />
           </div>
-          <button type="submit" className="w-full px-6 py-3 bg-gradient-to-r from-gray-800 to-gray-600 text-white rounded-full font-semibold text-lg shadow hover:from-gray-900 hover:to-gray-700 transition">Send Message</button>
+          <button type="submit" className="w-full px-6 py-3 bg-blue-700 text-white rounded-full font-semibold text-lg shadow hover:bg-blue-800 transition">Send Message</button>
           {status !== "" && <div className="text-center text-green-600 font-semibold mt-2">{status}</div>}
         </form>
         {/* Map & Address */}
         <div className="flex-1 flex flex-col items-center w-full">
           <div className="w-full h-64 rounded-2xl overflow-hidden shadow mb-6">
             <iframe
-              title="AlphaLinkCall Location"
+              title="AlphaLink Location"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509374!2d144.9537363159047!3d-37.8162797420217!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d43f1f6e0b1%3A0x5045675218ce6e0!2sMelbourne%20VIC%2C%20Australia!5e0!3m2!1sen!2sus!4v1680000000000!5m2!1sen!2sus"
               width="100%"
               height="100%"
@@ -70,7 +70,7 @@ export default function Contact() {
             ></iframe>
           </div>
           <div className="bg-blue-50 rounded-xl p-6 w-full text-center shadow">
-            <h2 className="text-xl font-bold text-blue-800 mb-2">AlphaLinkCall HQ</h2>
+            <h2 className="text-xl font-bold text-blue-800 mb-2">AlphaLink HQ</h2>
             <p className="text-gray-700 mb-1">123 Main St, Suite 100</p>
             <p className="text-gray-700 mb-1">Melbourne, VIC 3000, Australia</p>
             <p className="text-gray-700 mb-1">Email: <a href="mailto:info@innocall.com" className="text-blue-700 underline">info@innocall.com</a></p>

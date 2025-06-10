@@ -3,8 +3,8 @@
 export default function CalendlyModal({ open, onClose }: { open: boolean; onClose: () => void }) {
   if (!open) return null;
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60">
-      <div className="bg-white rounded-2xl shadow-xl max-w-2xl w-full p-6 relative animate-fadeIn">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-transparent">
+      <div className="bg-white rounded-2xl shadow-xl max-w-2xl w-full p-6 relative animate-fadeIn border-4 border-[#f48e1b]">
         <button
           onClick={onClose}
           className="absolute top-4 right-4 text-gray-500 hover:text-blue-700 text-2xl font-bold"

@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --background: linear-gradient(180deg, #f3f4f6 0%, #e5e7eb 50%, #d1d5db 100%);
-  --foreground: #23272a;
+  --background: linear-gradient(180deg, #ffffff 0%, #f5faff 100%);
+  --foreground: #0054ab;
+  --accent-gold: #f48e1b;
 }
 
 @theme inline {
@@ -10,12 +11,13 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-accent-gold: var(--accent-gold);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: linear-gradient(180deg, #23272a 0%, #2d3238 100%);
-    --foreground: #ededed;
+    --background: linear-gradient(180deg, #eaf4fb 0%, #f5faff 100%);
+    --foreground: #f48e1b;
   }
 }
 
@@ -23,4 +25,18 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+@keyframes shine {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shine {
+  animation: shine 2.5s linear infinite;
 }

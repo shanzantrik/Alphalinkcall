@@ -177,7 +177,7 @@ export default function Technology() {
       <div className="text-center mt-10">
         <button
           onClick={() => setModalOpen(true)}
-          className="inline-block px-10 py-5 bg-gradient-to-r from-gray-800 to-gray-600 text-white rounded-full font-bold text-xl shadow hover:from-gray-900 hover:to-gray-700 transition"
+          className="inline-block px-10 py-5 bg-gradient-to-r from-blue-700 to-blue-500 text-white rounded-full font-bold text-xl shadow hover:from-blue-800 hover:to-blue-600 transition"
         >
           See Our Technology in Action
         </button>

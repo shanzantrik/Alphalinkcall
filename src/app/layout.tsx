@@ -107,11 +107,12 @@ export default function RootLayout({
               <span className="block w-6 h-0.5 bg-gray-800 -rotate-45 absolute"></span>
             </button>
             <nav className="flex flex-col gap-6 mt-24 px-8 text-lg font-bold">
+              <Link href="/about" className="hover:text-[#f48e1b] text-[#0054ab] transition" onClick={() => setMenuOpen(false)}>About</Link>
               <Link href="/services" className="hover:text-[#f48e1b] text-[#0054ab] transition" onClick={() => setMenuOpen(false)}>Services</Link>
               <Link href="/technology" className="hover:text-[#f48e1b] text-[#0054ab] transition" onClick={() => setMenuOpen(false)}>Technology</Link>
               <Link href="/industries" className="hover:text-[#f48e1b] text-[#0054ab] transition" onClick={() => setMenuOpen(false)}>Industries</Link>
-              <Link href="/about" className="hover:text-[#f48e1b] text-[#0054ab] transition" onClick={() => setMenuOpen(false)}>About</Link>
-              <Link href="/blog" className="hover:text-[#f48e1b] text-[#0054ab] transition" onClick={() => setMenuOpen(false)}>Blog</Link>
+
+              {/* <Link href="/blog" className="hover:text-[#f48e1b] text-[#0054ab] transition" onClick={() => setMenuOpen(false)}>Blog</Link> */}
               <Link href="/contact" className="flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-[#0054ab] to-[#0074d9] text-white rounded-full font-bold shadow hover:from-[#003366] hover:to-[#0054ab] transition mt-2" onClick={() => setMenuOpen(false)}>
                 <FaPhoneAlt className="text-[#f48e1b] text-base" /> Contact
               </Link>

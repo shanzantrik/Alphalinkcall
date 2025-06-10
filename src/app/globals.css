@@ -40,3 +40,19 @@ body {
 .animate-shine {
   animation: shine 2.5s linear infinite;
 }
+
+@keyframes gold-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 #f48e1b66, 0 0 0 0 #ffd58044;
+  }
+
+  50% {
+    box-shadow: 0 0 16px 4px #f48e1b99, 0 0 32px 8px #ffd58066;
+  }
+}
+
+.animate-gold-glow {
+  animation: gold-glow 2.5s ease-in-out infinite;
+}

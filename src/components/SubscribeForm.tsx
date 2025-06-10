@@ -30,7 +30,7 @@ export default function SubscribeForm() {
       />
       <button
         type="submit"
-        className="px-6 py-2 rounded-full bg-gradient-to-r from-blue-700 to-blue-500 text-white font-bold shadow hover:from-blue-800 hover:to-blue-600 transition"
+        className="px-6 py-2 bg-gradient-to-r from-[#0054ab] to-[#0074d9] text-white rounded-full font-bold shadow hover:from-[#003366] hover:to-[#0054ab] transition focus:outline-none focus:ring-4 focus:ring-[#f48e1b]"
       >
         Subscribe
       </button>

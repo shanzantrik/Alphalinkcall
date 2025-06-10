@@ -60,11 +60,12 @@ export default function RootLayout({
               <span className={`block w-7 h-1 rounded-full bg-gray-800 transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
             </button>
             <nav className="hidden md:flex items-center gap-8 text-base font-bold">
+              <Link href="/about" className="hover:text-[#f48e1b] text-[#0054ab] transition">About</Link>
               <Link href="/services" className="hover:text-[#f48e1b] text-[#0054ab] transition">Services</Link>
               <Link href="/technology" className="hover:text-[#f48e1b] text-[#0054ab] transition">Technology</Link>
               <Link href="/industries" className="hover:text-[#f48e1b] text-[#0054ab] transition">Industries</Link>
-              <Link href="/about" className="hover:text-[#f48e1b] text-[#0054ab] transition">About</Link>
-              <Link href="/blog" className="hover:text-[#f48e1b] text-[#0054ab] transition">Blog</Link>
+
+              {/* <Link href="/blog" className="hover:text-[#f48e1b] text-[#0054ab] transition">Blog</Link> */}
               <Link href="/contact" className="ml-4 flex items-center gap-2 px-6 py-2 bg-gradient-to-r from-[#0054ab] to-[#0074d9] text-white rounded-full font-bold shadow hover:from-[#003366] hover:to-[#0054ab] transition">
                 <FaPhoneAlt className="text-[#f48e1b] text-base" /> Contact
               </Link>
@@ -169,7 +170,7 @@ export default function RootLayout({
             <Link href="/technology" className="hover:text-white transition">Technology</Link>
             <Link href="/industries" className="hover:text-white transition">Industries</Link>
             <Link href="/about" className="hover:text-white transition">About</Link>
-            <Link href="/blog" className="hover:text-white transition">Blog</Link>
+            {/* <Link href="/blog" className="hover:text-white transition">Blog</Link> */}
             <Link href="/contact" className="hover:text-white transition">Contact</Link>
             <Link href="/privacy" className="hover:text-white transition">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-white transition">Terms of Service</Link>

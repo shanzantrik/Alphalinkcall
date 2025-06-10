@@ -35,11 +35,11 @@ export default function About() {
           <div className="relative w-[340px] h-[400px] flex flex-col gap-4" id="outer">
             {/* Top Image Pane */}
             <div className="relative w-full h-1/2 overflow-hidden shadow-lg rounded-t-[20px] rounded-br-[60px] border-4 border-[#f48e1b] animate-gold-glow">
-              <Image src="/pexels-mart-production-7709271.webp" alt="Australia" fill className="object-cover w-full h-full" style={{ borderTopLeftRadius: 20, borderTopRightRadius: 20, borderBottomRightRadius: 60, borderBottomLeftRadius: 0 }} />
+              <Image src="/about2.webp" alt="Australia" fill className="object-cover w-full h-full" style={{ borderTopLeftRadius: 20, borderTopRightRadius: 20, borderBottomRightRadius: 60, borderBottomLeftRadius: 0 }} />
             </div>
             {/* Bottom Image Pane */}
             <div className="relative w-full h-1/2 overflow-hidden shadow-lg rounded-b-[20px] rounded-tl-[60px] border-4 border-[#f48e1b] animate-gold-glow">
-              <Image src="/pexels-mart-production-7709251.webp" alt="Teamwork" fill className="object-cover w-full h-full" style={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20, borderTopLeftRadius: 60, borderTopRightRadius: 0 }} />
+              <Image src="/about1.webp" alt="Teamwork" fill className="object-cover w-full h-full" style={{ borderBottomLeftRadius: 20, borderBottomRightRadius: 20, borderTopLeftRadius: 60, borderTopRightRadius: 0 }} />
             </div>
           </div>
         </div>
@@ -63,7 +63,7 @@ export default function About() {
       </section>
       {/* Our Story */}
       <section className="mb-24 flex flex-col md:flex-row gap-16 items-center">
-        <Image src="/pexels-mart-production-7709214.webp" alt="Our Story" width={700} height={466} className="rounded-2xl shadow-2xl w-full max-w-xl object-cover flex-1" />
+        <Image src="/story.webp" alt="Our Story" width={700} height={466} className="rounded-2xl shadow-2xl w-full max-w-xl object-cover flex-1" />
         <div className="flex-1">
           <h2 className="text-3xl font-extrabold text-[#0054ab] mb-4">Our Story</h2>
           <p className="text-[#0054ab] mb-4 text-lg leading-relaxed">

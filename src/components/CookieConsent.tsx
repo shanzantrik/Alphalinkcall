@@ -13,12 +13,12 @@ export default function CookieConsent() {
   if (!visible) return null;
   return (
     show && (
-      <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col gap-4 items-start border border-gray-200">
+      <div className="bg-white rounded-xl shadow-lg p-6 flex flex-col gap-4 items-start border-2 border-[#0054ab]">
         <div className="flex items-center justify-between w-full">
-          <span className="font-semibold text-gray-800">We use cookies</span>
-          <button onClick={handleAccept} className="ml-4 text-sm text-blue-700 hover:underline font-bold">Accept</button>
+          <span className="font-semibold text-[#0054ab]">We use cookies</span>
+          <button onClick={handleAccept} className="ml-4 text-sm bg-gradient-to-r from-[#f48e1b] to-[#ffd580] text-[#0054ab] px-4 py-2 rounded-full font-bold shadow hover:scale-105 transition focus:outline-none focus:ring-2 focus:ring-[#f48e1b]">Accept</button>
         </div>
-        <p className="text-gray-600 text-sm">This website uses cookies to ensure you get the best experience on our website. <a href="/privacy" className="text-blue-700 underline">Learn more</a></p>
+        <p className="text-[#0054ab] text-sm">This website uses cookies to ensure you get the best experience on our website. <a href="/privacy" className="text-[#f48e1b] underline font-semibold hover:text-[#0054ab]">Learn more</a></p>
       </div>
     )
   );

@@ -56,3 +56,17 @@ body {
 .animate-gold-glow {
   animation: gold-glow 2.5s ease-in-out infinite;
 }
+
+@keyframes scroll-logos {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-logos {
+  animation: scroll-logos 30s linear infinite;
+}

@@ -2,7 +2,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
-import { FaLinkedin, FaTwitter, FaFacebook, FaPhoneAlt, FaArrowUp } from "react-icons/fa";
+import { FaLinkedin, FaTwitter, FaFacebook, FaPhoneAlt, FaArrowUp, FaWhatsapp } from "react-icons/fa";
 import CookieConsent from "@/components/CookieConsent";
 import SubscribeForm from "../components/SubscribeForm";
 import { useState } from "react";
@@ -28,6 +28,18 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        {/* WhatsApp Floating Button (now global) */}
+        <a
+          href="https://wa.me/61414626109"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed z-50 bottom-6 right-6 md:bottom-8 md:right-8 bg-[#f48e1b] hover:bg-[#FFD580] text-[#0054ab] rounded-full shadow-lg flex items-center justify-center w-16 h-16 transition-all group"
+          title="Chat with us on WhatsApp"
+          aria-label="Chat with us on WhatsApp"
+        >
+          <FaWhatsapp className="text-4xl" />
+          <span className="absolute bottom-20 right-0 bg-[#0054ab] text-white text-xs rounded px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none">Chat with us on WhatsApp</span>
+        </a>
         <header className="w-full bg-gradient-to-b from-white to-[#f5faff] shadow-sm fixed top-0 left-0 z-50 border-b border-[#0054ab]">
           <div className="w-full flex justify-between items-center py-6 px-4 md:px-10">
             <Link href="/" className="flex items-center gap-2 text-2xl font-bold tracking-tight text-[#0054ab]">

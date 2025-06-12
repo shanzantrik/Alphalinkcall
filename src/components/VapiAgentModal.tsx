@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Fragment, useEffect, useRef, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
-import { FaAmbulance, FaPhoneSlash } from 'react-icons/fa';
+import { FaAmbulance, FaPhoneSlash, FaPhone } from 'react-icons/fa';
 import Vapi from '@vapi-ai/web';
 
 interface VapiAgentModalProps {
@@ -22,6 +22,8 @@ export default function VapiAgentModal({ open, onClose }: VapiAgentModalProps) {
   const [callActive, setCallActive] = useState(false);
   const [transcript, setTranscript] = useState<TranscriptMessage[]>([]);
   const transcriptEndRef = useRef<HTMLDivElement>(null);
+  const [isConnecting, setIsConnecting] = useState(false);
+  const audioRef = useRef<HTMLAudioElement>(null);
 
   // Auto-scroll transcript
   useEffect(() => {
@@ -30,23 +32,31 @@ export default function VapiAgentModal({ open, onClose }: VapiAgentModalProps) {
 
   // Start/stop call on modal open/close
   useEffect(() => {
-    // Vapi types are not available, so we cast to any for all usages below
     const vapi = vapiRef.current as any;
     if (open) {
+      setIsConnecting(true);
       if (!vapi) {
         vapiRef.current = new (Vapi as any)(apiKey);
         const vapiInstance = vapiRef.current as any;
-        vapiInstance.on('call-start', () => setCallActive(true));
+        vapiInstance.on('call-start', () => {
+          setCallActive(true);
+          setIsConnecting(false);
+        });
         vapiInstance.on('call-end', () => {
           setCallActive(false);
           setTranscript([]);
+          setIsConnecting(false);
         });
         vapiInstance.on('message', (message: { type: string; role: 'user' | 'assistant'; transcript: string }) => {
           if (message.type === 'transcript') {
             setTranscript((prev) => [...prev, { role: message.role, content: message.transcript }]);
+            setIsConnecting(false);
           }
         });
-        vapiInstance.on('error', () => setCallActive(false));
+        vapiInstance.on('error', () => {
+          setCallActive(false);
+          setIsConnecting(false);
+        });
         vapiInstance.start(assistantId);
       } else {
         vapi.start(assistantId);
@@ -55,15 +65,28 @@ export default function VapiAgentModal({ open, onClose }: VapiAgentModalProps) {
       if (vapi) vapi.stop();
       setCallActive(false);
       setTranscript([]);
+      setIsConnecting(false);
     }
   }, [open]);
 
+  // Play/stop ring sound while connecting
+  useEffect(() => {
+    if (isConnecting && open) {
+      audioRef.current?.play().catch(() => {});
+    } else {
+      audioRef.current?.pause();
+      if (audioRef.current) {
+        audioRef.current.currentTime = 0;
+      }
+    }
+  }, [isConnecting, open]);
+
   const handleDisconnect = () => {
-    // Vapi types are not available, so we cast to any
     const vapi = vapiRef.current as any;
     if (vapi) vapi.stop();
     setCallActive(false);
     setTranscript([]);
+    setIsConnecting(false);
     onClose();
   };
 
@@ -93,8 +116,20 @@ export default function VapiAgentModal({ open, onClose }: VapiAgentModalProps) {
                   </Dialog.Title>
                 </div>
                 {/* Transcript/chat area */}
-                <div className="px-6 py-4 h-64 overflow-y-auto bg-[#f5faff]">
-                  {transcript.length === 0 && (
+                <div className="px-6 py-4 h-64 overflow-y-auto bg-[#f5faff] flex flex-col items-center justify-center">
+                  {isConnecting && transcript.length === 0 && !callActive && (
+                    <div className="flex flex-col items-center justify-center w-full h-full">
+                      <span className="relative flex h-16 w-16 mb-4">
+                        <span className="animate-spin absolute inline-flex h-full w-full rounded-full border-4 border-[#0054ab] border-t-transparent"></span>
+                        <span className="relative flex items-center justify-center h-16 w-16">
+                          <FaPhone className="text-[#f48e1b] text-4xl" />
+                        </span>
+                      </span>
+                      <span className="text-[#0054ab] font-semibold">Connecting to AlphaLink Assistant...</span>
+                      <audio ref={audioRef} src="/ring.mp3" loop preload="auto" />
+                    </div>
+                  )}
+                  {!isConnecting && transcript.length === 0 && (
                     <div className="text-center text-[#0054ab] opacity-60 mt-16">Waiting for conversation...</div>
                   )}
                   {transcript.map((msg, idx) => (

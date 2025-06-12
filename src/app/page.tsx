@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { FaPhoneAlt, FaComments, FaHeadset, FaEnvelope, FaRegSmile, FaRegClock, FaRegCheckCircle, FaRegListAlt, FaWhatsapp, FaAmbulance } from "react-icons/fa";
+import { FaPhoneAlt, FaComments, FaHeadset, FaEnvelope, FaRegSmile, FaRegClock, FaRegCheckCircle, FaRegListAlt, FaWhatsapp } from "react-icons/fa";
 import { useState } from "react";
 import CalendlyModal from "../components/CalendlyModal";
 import Image from "next/image";

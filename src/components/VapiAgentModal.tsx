@@ -56,7 +56,6 @@ export default function VapiAgentModal({ open, onClose }: VapiAgentModalProps) {
       setCallActive(false);
       setTranscript([]);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open]);
 
   const handleDisconnect = () => {

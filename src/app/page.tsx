@@ -1,15 +1,17 @@
 "use client";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { FaPhoneAlt, FaComments, FaHeadset, FaEnvelope, FaRegSmile, FaRegClock, FaRegCheckCircle, FaRegListAlt, FaWhatsapp } from "react-icons/fa";
+import { FaPhoneAlt, FaComments, FaHeadset, FaEnvelope, FaRegSmile, FaRegClock, FaRegCheckCircle, FaRegListAlt, FaWhatsapp, FaAmbulance } from "react-icons/fa";
 import { useState } from "react";
 import CalendlyModal from "../components/CalendlyModal";
 import Image from "next/image";
 import TestimonialCarousel from "../components/TestimonialCarousel";
 import FAQAccordion from "../components/FAQAccordion";
+import VapiAgentModal from "../components/VapiAgentModal";
 
 export default function Home() {
   const [modalOpen, setModalOpen] = useState(false);
+  const [agentModalOpen, setAgentModalOpen] = useState(false);
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-[#f5faff] to-[#eaf4fb] flex flex-col items-center justify-center px-4 pt-10 w-full">
       {/* WhatsApp Floating Button */}
@@ -53,6 +55,18 @@ export default function Home() {
         <span className="hidden md:inline relative z-10">Book a Free Consultation</span>
       </button>
       <CalendlyModal open={modalOpen} onClose={() => setModalOpen(false)} />
+      {/* Ambulance Assistance Button opens modal */}
+      <button
+        onClick={() => setAgentModalOpen(true)}
+        className="fixed z-50 top-1/3 right-6 md:right-10 bg-gradient-to-r from-[#0054ab] to-[#0074d9] text-white rounded-full shadow-lg flex items-center gap-3 px-6 py-4 font-bold text-lg animate-bounce hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-[#f48e1b] overflow-hidden"
+        style={{ boxShadow: '0 8px 32px 0 rgba(0, 84, 171, 0.18)' }}
+        aria-label="Call AlphaLink Ambulance Assistance"
+        type="button"
+      >
+        <FaAmbulance className="text-[#f48e1b] text-2xl drop-shadow" />
+        <span className="relative z-10">Call AlphaLink Ambulance Assistance</span>
+      </button>
+      <VapiAgentModal open={agentModalOpen} onClose={() => setAgentModalOpen(false)} />
       <div className="w-full max-w-7xl mx-auto">
       {/* Hero Section */}
       <section className="w-full flex flex-col md:flex-row items-center gap-10 py-20 md:py-32">
@@ -77,6 +91,8 @@ export default function Home() {
           >
             <FaPhoneAlt className="text-[#f48e1b] text-base" /> Get in Touch
           </button>
+          {/* Divider for spacing */}
+          <div className="my-6" />
         </motion.div>
         {/* Animated Hero Visual - Responsive */}
         <motion.div className="flex-1 flex flex-col justify-center items-center relative min-h-[300px] md:min-h-[400px] w-full max-w-xs md:max-w-none mx-auto">
@@ -127,13 +143,16 @@ export default function Home() {
               <FaEnvelope className="text-[#f48e1b] text-2xl md:text-3xl drop-shadow" />
             </motion.div>
           </>
-          {/* Human Figure in Center */}
-          <motion.div
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#f3f4f6] rounded-full shadow-lg flex items-center justify-center"
+          {/* Human Figure in Center - now clickable to open modal */}
+          <motion.button
+            type="button"
+            onClick={() => setAgentModalOpen(true)}
+            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#f3f4f6] rounded-full shadow-lg flex items-center justify-center focus:outline-none focus:ring-4 focus:ring-[#f48e1b] cursor-pointer"
             style={{ width: 120, height: 120 }}
             initial={{ scale: 0.9, opacity: 0.8 }}
             animate={{ scale: [0.9, 1, 0.98, 1], opacity: [0.8, 1, 1, 1] }}
             transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+            aria-label="Try AlphaLink AI Assistant"
           >
             <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" fill="none" width="80" height="80">
               <ellipse fill="#f48e1b" cx="20.1" cy="65" rx="6.4" ry="6.4"></ellipse>
@@ -150,7 +169,13 @@ export default function Home() {
               <path fill="#438DFF" d="M57.6,48.2c-0.2-0.2-0.4-0.5-0.4-0.7c-0.2-0.9,0.3-1.6,1.2-1.9c5.1-1.2,10.3,0.3,13.9,4c3.7,3.7,5.2,8.8,4,13.9c-0.2,0.9-1,1.4-1.9,1.2c-0.9-0.2-1.4-1-1.2-1.9c0.9-4-0.3-8.1-3.1-11s-7-4.1-11-3.1C58.5,48.7,58,48.6,57.6,48.2z"></path>
               <path fill="#438DFF" d="M56.3,42.1c-0.2-0.2-0.4-0.5-0.4-0.7c-0.2-0.9,0.3-1.6,1.2-1.9c7.1-1.6,14.5,0.5,19.7,5.6c5.2,5.2,7.3,12.5,5.6,19.7c-0.2,0.9-1,1.4-1.9,1.2c-0.9-0.2-1.4-1-1.2-1.9c1.4-6.1-0.4-12.4-4.8-16.7c-4.4-4.4-10.7-6.2-16.7-4.8C57.2,42.7,56.6,42.5,56.3,42.1z"></path>
             </svg>
-          </motion.div>
+          </motion.button>
+          {/* Text below logo circle */}
+          <div className="mt-50 text-center">
+            <span className="block text-lg md:text-xl font-bold text-[#0054ab]">
+              Click on the logo above to talk to our <span className="text-[#f48e1b]">24/7 AlphaLink Assistant</span> Now!
+            </span>
+          </div>
           {/* Animated Marquee Text */}
           <motion.div className="w-full absolute left-0 -bottom-12 md:-bottom-16 overflow-hidden" initial={false} animate={{}}>
             <motion.div

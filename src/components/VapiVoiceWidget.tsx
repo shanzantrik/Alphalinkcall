@@ -1,6 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useRef } from 'react';
 import { FaAmbulance } from 'react-icons/fa';
-// @ts-expect-error: Vapi types may not be available if package lacks types
 import Vapi from '@vapi-ai/web';
 
 interface VapiVoiceWidgetProps {

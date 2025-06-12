@@ -171,7 +171,7 @@ export default function Home() {
             </svg>
           </motion.button>
           {/* Text below logo circle */}
-          <div className="mt-50 text-center">
+          <div className="mt-20 text-center">
             <span className="block text-lg md:text-xl font-bold text-[#0054ab]">
               Click on the logo above to talk to our <span className="text-[#f48e1b]">24/7 AlphaLink Assistant</span> Now!
             </span>

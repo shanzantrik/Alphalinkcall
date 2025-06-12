@@ -55,17 +55,7 @@ export default function Home() {
         <span className="hidden md:inline relative z-10">Book a Free Consultation</span>
       </button>
       <CalendlyModal open={modalOpen} onClose={() => setModalOpen(false)} />
-      {/* Ambulance Assistance Button opens modal */}
-      <button
-        onClick={() => setAgentModalOpen(true)}
-        className="fixed z-50 top-1/3 right-6 md:right-10 bg-gradient-to-r from-[#0054ab] to-[#0074d9] text-white rounded-full shadow-lg flex items-center gap-3 px-6 py-4 font-bold text-lg animate-bounce hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-[#f48e1b] overflow-hidden"
-        style={{ boxShadow: '0 8px 32px 0 rgba(0, 84, 171, 0.18)' }}
-        aria-label="Call AlphaLink Ambulance Assistance"
-        type="button"
-      >
-        <FaAmbulance className="text-[#f48e1b] text-2xl drop-shadow" />
-        <span className="relative z-10">Call AlphaLink Ambulance Assistance</span>
-      </button>
+
       <VapiAgentModal open={agentModalOpen} onClose={() => setAgentModalOpen(false)} />
       <div className="w-full max-w-7xl mx-auto">
       {/* Hero Section */}
@@ -171,7 +161,7 @@ export default function Home() {
             </svg>
           </motion.button>
           {/* Text below logo circle */}
-          <div className="mt-20 text-center">
+          <div className="mt-48 text-center">
             <span className="block text-lg md:text-xl font-bold text-[#0054ab]">
               Click on the logo above to talk to our <span className="text-[#f48e1b]">24/7 AlphaLink Assistant</span> Now!
             </span>

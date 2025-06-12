@@ -89,7 +89,7 @@ export default function VapiAgentModal({ open, onClose }: VapiAgentModalProps) {
                 <div className="flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-[#0054ab] to-[#0074d9]">
                   <FaAmbulance className="text-[#f48e1b] text-2xl" />
                   <Dialog.Title as="h3" className="text-lg font-bold text-white">
-                    AlphaLink Ambulance Assistance
+                    AlphaLink 24/7 Support Assistant
                   </Dialog.Title>
                 </div>
                 {/* Transcript/chat area */}

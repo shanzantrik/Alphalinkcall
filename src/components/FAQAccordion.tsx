@@ -4,29 +4,54 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const faqs = [
   {
-    question: "What industries do you serve?",
+    question: "What services does Alphalink offer?",
     answer:
-      "We specialize in supporting trades and home services, including plumbers, electricians, HVAC, and other service professionals. Our solutions are tailored for small businesses and growing teams.",
+      "We provide outsourced call answering, message-taking, smart call routing, and client engagement services tailored for small businesses, trades, and service industries.",
   },
   {
-    question: "How quickly are calls answered?",
+    question: "Is Alphalink a call centre?",
     answer:
-      "Our agents answer calls promptly, typically within a few rings. We ensure your customers never wait long and always receive a professional, friendly response.",
+      "We’re a little different. We’re a smart, modern answering service designed to sound like part of your business — not a traditional call centre.",
   },
   {
-    question: "Is your service available 24/7?",
+    question: "Can I forward my mobile or landline to Alphalink?",
     answer:
-      "Yes! We offer true 24/7 call answering, including after-hours, weekends, and holidays, so you never miss an important call.",
+      "Yes! Most clients forward their existing number to us. We’ll give you clear instructions and set-up support.",
+  },
+  {
+    question: "Will my callers know it’s not me answering?",
+    answer:
+      "No — we answer in your business name with scripts you approve. It feels seamless for your clients.",
+  },
+  {
+    question: "How quickly do you answer calls?",
+    answer:
+      "On average, within 3 rings. Fast, professional, and reliable — every time.",
+  },
+  {
+    question: "Can you handle bookings or just take messages?",
+    answer:
+      "We can do both. Need us to log a job, book an appointment, or escalate urgent issues? Just let us know — we’ll build it into your workflow.",
+  },
+  {
+    question: "Is it month-to-month or locked-in contracts?",
+    answer:
+      "Month-to-month. No long-term tie-ins. Scale up or down as you need.",
+  },
+  {
+    question: "What industries do you work with?",
+    answer:
+      "We support a wide range — trades, medical, legal, consulting, real estate, and more. If your phone rings, we can help.",
+  },
+  {
+    question: "Where are your operators based?",
+    answer:
+      "All our team are trained and based in South Africa, providing high-quality support for Australian businesses at affordable rates.",
   },
   {
     question: "How do I get started?",
     answer:
-      "Getting started is easy—just book a free consultation or contact us. We'll discuss your needs, set up your account, and have you up and running quickly.",
-  },
-  {
-    question: "Can you handle urgent or emergency calls?",
-    answer:
-      "Absolutely. Our team is trained to identify urgent calls and escalate them according to your instructions, ensuring critical jobs are never missed.",
+      "Easy — hit “Get in Touch”, and we’ll book a short call to understand your needs and set you up in no time.",
   },
 ];
 

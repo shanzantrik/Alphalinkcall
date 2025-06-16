@@ -2,7 +2,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
-import { FaLinkedin, FaTwitter, FaFacebook, FaPhoneAlt, FaArrowUp, FaWhatsapp } from "react-icons/fa";
+import { FaLinkedin, FaTwitter, FaFacebook, FaPhoneAlt, FaArrowUp, FaWhatsapp, FaHome } from "react-icons/fa";
 import CookieConsent from "@/components/CookieConsent";
 import SubscribeForm from "../components/SubscribeForm";
 import { useState } from "react";
@@ -72,6 +72,9 @@ export default function RootLayout({
               <span className={`block w-7 h-1 rounded-full bg-gray-800 transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
             </button>
             <nav className="hidden md:flex items-center gap-8 text-base font-bold">
+              <Link href="/" className="hover:text-[#f48e1b] text-[#0054ab] transition flex items-center" aria-label="Home">
+                <FaHome className="text-lg mr-1" />
+              </Link>
               <Link href="/about" className="hover:text-[#f48e1b] text-[#0054ab] transition">About</Link>
               <Link href="/services" className="hover:text-[#f48e1b] text-[#0054ab] transition">Services</Link>
               <Link href="/technology" className="hover:text-[#f48e1b] text-[#0054ab] transition">Technology</Link>
@@ -107,6 +110,9 @@ export default function RootLayout({
               <span className="block w-6 h-0.5 bg-gray-800 -rotate-45 absolute"></span>
             </button>
             <nav className="flex flex-col gap-6 mt-24 px-8 text-lg font-bold">
+              <Link href="/" className="hover:text-[#f48e1b] text-[#0054ab] transition flex items-center" aria-label="Home" onClick={() => setMenuOpen(false)}>
+                <FaHome className="text-lg mr-2" />
+              </Link>
               <Link href="/about" className="hover:text-[#f48e1b] text-[#0054ab] transition" onClick={() => setMenuOpen(false)}>About</Link>
               <Link href="/services" className="hover:text-[#f48e1b] text-[#0054ab] transition" onClick={() => setMenuOpen(false)}>Services</Link>
               <Link href="/technology" className="hover:text-[#f48e1b] text-[#0054ab] transition" onClick={() => setMenuOpen(false)}>Technology</Link>
@@ -187,6 +193,7 @@ export default function RootLayout({
             <Link href="/contact" className="hover:text-white transition">Contact</Link>
             <Link href="/privacy" className="hover:text-white transition">Privacy Policy</Link>
             <Link href="/terms" className="hover:text-white transition">Terms of Service</Link>
+            <Link href="/sitemap" className="hover:text-white transition">Sitemap</Link>
           </div>
 
           <button

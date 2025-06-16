@@ -63,14 +63,14 @@ export default function About() {
       </section>
       {/* Our Story */}
       <section className="mb-24 flex flex-col md:flex-row gap-16 items-center">
-        <Image src="/story.webp" alt="Our Story" width={700} height={466} className="rounded-2xl shadow-2xl w-full max-w-xl object-cover flex-1" />
+        <Image src="/story.webp" alt="Our Story" width={670} height={400} className="rounded-2xl shadow-2xl w-full max-w-xl object-cover flex-1" />
         <div className="flex-1">
           <h2 className="text-3xl font-extrabold text-[#0054ab] mb-4">Our Story</h2>
           <p className="text-[#0054ab] mb-4 text-lg leading-relaxed">
-            Founded by customer service professionals, AlphaLink was created to bridge the gap between technology and the human touch. We believe every call is an opportunity to build trust and loyalty.<br /><br />
-            Our journey began with a simple mission: empower businesses to deliver exceptional customer experiences, 24/7. We combine AI-powered call routing and smart integrations with a team of friendly, Aussie-based agents who understand the unique needs of trades and service businesses.<br /><br />
-            Today, AlphaLink is trusted by plumbers, electricians, HVAC pros, and home service companies across Australia. Our platform is designed for flexibility—whether you need after-hours support, overflow call handling, or seamless CRM integration, we scale with you. We&apos;re passionate about helping you never miss a call, win more jobs, and build lasting customer relationships.<br /><br />
-            At AlphaLink, we&apos;re more than a call centre—we&apos;re your partner in growth, blending cutting-edge technology with genuine care. Experience the AlphaLink difference and see how we can help your business thrive.
+            Alphalink was built to help small business owners stay focused on what they do best — while we handle the calls, bookings, and admin behind the scenes.<br /><br />
+            We’re not a call centre. We’re a partner — giving you the front-desk presence of a much larger operation, without the overhead.<br /><br />
+            With trained operators based in South Africa and a focus on clear, reliable communication, we provide tailored client support for trades, health, property, and professional industries across Australia.<br /><br />
+            Whether you’re a solo tradie or a national team, we help you sound sharp, stay responsive, and never miss a beat.
           </p>
         </div>
       </section>

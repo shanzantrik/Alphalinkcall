@@ -89,31 +89,52 @@ export default function Home() {
           {/* Chat bubble with text and animated dotted arrow above the concentric circle */}
           <div className="w-full flex flex-col items-center relative z-20" style={{ marginBottom: '0', marginTop: '-2.5rem', position: 'absolute', left: 0, right: 0, top: '-70px' }}>
             {/* Chat bubble */}
-            <div className="bg-white border-2 border-[#f48e1b] rounded-2xl px-6 py-3 shadow-lg flex items-center gap-2 max-w-md mx-auto mb-0 relative" style={{ fontWeight: 700, fontSize: '1.1rem' }}>
-              <span className="text-[#0054ab]">Click on the logo below to talk to our</span>
-              <span className="text-[#f48e1b] ml-1">24/7 AlphaLink Assistant</span>
-              <span className="text-[#0054ab] ml-1">Now!</span>
+            <div className="bg-white border-2 border-[#f48e1b] rounded-2xl px-6 py-3 shadow-lg flex items-center gap-2 max-w-md mx-auto mb-0 relative" style={{ fontWeight: 700, fontSize: '0.95rem' }}>
+              <div className="flex flex-row flex-nowrap w-full whitespace-nowrap">
+                <div className="flex-1 text-[#0054ab] text-left overflow-hidden text-ellipsis">Click below to talk to our</div>
+                <div className="flex-1 text-[#f48e1b] text-right overflow-hidden text-ellipsis">24/7 AlphaLink Assistant</div>
+              </div>
             </div>
-            {/* Animated dotted arrow from chat bubble to center of circle */}
-            <svg width="6" height="110" viewBox="0 0 6 110" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute left-1/2 -translate-x-1/2 top-full" style={{ zIndex: 10 }}>
-              <motion.line
-                x1="3" y1="0" x2="3" y2="100"
-                stroke="#f48e1b"
-                strokeWidth="4"
-                strokeDasharray="6 10"
-                initial={{ pathLength: 0 }}
-                animate={{ pathLength: 1 }}
-                transition={{ duration: 1.5, ease: 'easeInOut', repeat: Infinity, repeatType: 'reverse' }}
-              />
-              {/* Arrowhead */}
-              <motion.polygon
-                points="0,100 6,100 3,110"
-                fill="#f48e1b"
-                initial={{ opacity: 0, scale: 0.7 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.7, delay: 1.2, repeat: Infinity, repeatType: 'reverse' }}
-              />
-            </svg>
+            {/* Raindrop arrows animation */}
+            <div className="absolute left-1/2 -translate-x-1/2 top-full flex flex-col items-center" style={{ zIndex: 10, pointerEvents: 'none' }}>
+              {[0, 1, 2, 3, 4].map(i => (
+                <motion.svg
+                  key={i}
+                  width="18" height="18" viewBox="0 0 18 18" fill="none"
+                  style={{ position: 'absolute', left: `${i * 18 - 36}px`, top: 0 }}
+                  initial={{ y: 0, opacity: 1 }}
+                  animate={{ y: 90, opacity: 0 }}
+                  transition={{
+                    duration: 1.5,
+                    delay: i * 0.2,
+                    repeat: Infinity,
+                    repeatType: 'loop',
+                    ease: 'easeInOut',
+                  }}
+                >
+                  <polygon points="9,14 3,6 15,6" fill="#0054ab" />
+                </motion.svg>
+              ))}
+            </div>
+            {/* Animated audio graph below the falling arrows */}
+            <div className="absolute left-1/2 -translate-x-1/2 top-[110px] flex flex-row items-end gap-1" style={{ zIndex: 10, pointerEvents: 'none' }}>
+              {[0, 1, 2, 3, 4, 5, 6].map(i => (
+                <motion.div
+                  key={i}
+                  className="w-2 rounded bg-[#f48e1b]"
+                  initial={{ height: 10 + i * 4 }}
+                  animate={{ height: [20, 40, 15, 35, 25, 45, 20][i % 7] }}
+                  transition={{
+                    duration: 0.7 + i * 0.1,
+                    repeat: Infinity,
+                    repeatType: 'reverse',
+                    ease: 'easeInOut',
+                    delay: i * 0.1,
+                  }}
+                  style={{ minHeight: 10, maxHeight: 50 }}
+                />
+              ))}
+            </div>
           </div>
           {/* Concentric Circles as background */}
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0 w-[220px] h-[220px] md:w-[340px] md:h-[340px]">

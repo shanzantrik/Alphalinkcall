@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Fragment, useEffect, useRef, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
-import { FaAmbulance, FaPhoneSlash, FaPhone } from 'react-icons/fa';
+import { FaPhoneSlash, FaPhone } from 'react-icons/fa';
 import Vapi from '@vapi-ai/web';
+import Image from 'next/image';
 
 interface VapiAgentModalProps {
   open: boolean;
@@ -18,7 +19,7 @@ const apiKey = process.env.NEXT_PUBLIC_VAPI_API_KEY as string;
 const assistantId = process.env.NEXT_PUBLIC_VAPI_ASSISTANT_ID as string;
 
 export default function VapiAgentModal({ open, onClose }: VapiAgentModalProps) {
-  const vapiRef = useRef<unknown>(null);
+  const vapiRef = useRef<any>(null);
   const [callActive, setCallActive] = useState(false);
   const [transcript, setTranscript] = useState<TranscriptMessage[]>([]);
   const transcriptEndRef = useRef<HTMLDivElement>(null);
@@ -30,39 +31,52 @@ export default function VapiAgentModal({ open, onClose }: VapiAgentModalProps) {
     transcriptEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [transcript]);
 
+  // Only create Vapi instance and listeners once
+  useEffect(() => {
+    const vapiInstance = new (Vapi as any)(apiKey);
+    vapiRef.current = vapiInstance;
+    const handleCallStart = () => {
+      setCallActive(true);
+      setIsConnecting(false);
+    };
+    const handleCallEnd = () => {
+      setCallActive(false);
+      setTranscript([]);
+      setIsConnecting(false);
+    };
+    const handleMessage = (message: { type: string; role: 'user' | 'assistant'; transcript: string }) => {
+      if (message.type === 'transcript') {
+        setTranscript((prev) => [...prev, { role: message.role, content: message.transcript }]);
+        setIsConnecting(false);
+      }
+    };
+    const handleError = () => {
+      setCallActive(false);
+      setIsConnecting(false);
+    };
+    vapiInstance.on('call-start', handleCallStart);
+    vapiInstance.on('call-end', handleCallEnd);
+    vapiInstance.on('message', handleMessage);
+    vapiInstance.on('error', handleError);
+    return () => {
+      vapiInstance.off('call-start', handleCallStart);
+      vapiInstance.off('call-end', handleCallEnd);
+      vapiInstance.off('message', handleMessage);
+      vapiInstance.off('error', handleError);
+      vapiInstance.stop();
+      vapiRef.current = null;
+    };
+  }, []);
+
   // Start/stop call on modal open/close
   useEffect(() => {
-    const vapi = vapiRef.current as any;
+    const vapi = vapiRef.current;
     if (open) {
       setIsConnecting(true);
-      if (!vapi) {
-        vapiRef.current = new (Vapi as any)(apiKey);
-        const vapiInstance = vapiRef.current as any;
-        vapiInstance.on('call-start', () => {
-          setCallActive(true);
-          setIsConnecting(false);
-        });
-        vapiInstance.on('call-end', () => {
-          setCallActive(false);
-          setTranscript([]);
-          setIsConnecting(false);
-        });
-        vapiInstance.on('message', (message: { type: string; role: 'user' | 'assistant'; transcript: string }) => {
-          if (message.type === 'transcript') {
-            setTranscript((prev) => [...prev, { role: message.role, content: message.transcript }]);
-            setIsConnecting(false);
-          }
-        });
-        vapiInstance.on('error', () => {
-          setCallActive(false);
-          setIsConnecting(false);
-        });
-        vapiInstance.start(assistantId);
-      } else {
-        vapi.start(assistantId);
-      }
+      vapi?.stop();
+      vapi?.start(assistantId);
     } else {
-      if (vapi) vapi.stop();
+      vapi?.stop();
       setCallActive(false);
       setTranscript([]);
       setIsConnecting(false);
@@ -110,7 +124,7 @@ export default function VapiAgentModal({ open, onClose }: VapiAgentModalProps) {
               <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white text-left align-middle shadow-xl transition-all border-2 border-[#0054ab]">
                 {/* Header */}
                 <div className="flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-[#0054ab] to-[#0074d9]">
-                  <FaAmbulance className="text-[#f48e1b] text-2xl" />
+                  <Image src="/alpha1.webp" width={36} height={36} alt="AlphaLink Logo" className="rounded-full bg-white" />
                   <Dialog.Title as="h3" className="text-lg font-bold text-white">
                     AlphaLink 24/7 Support Assistant
                   </Dialog.Title>

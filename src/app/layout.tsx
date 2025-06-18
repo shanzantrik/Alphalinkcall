@@ -30,7 +30,7 @@ export default function RootLayout({
       >
         {/* WhatsApp Floating Button (now global) */}
         <a
-          href="https://wa.me/61414626109"
+          href="https://wa.me/919085538844"
           target="_blank"
           rel="noopener noreferrer"
           className="fixed z-50 bottom-6 right-6 md:bottom-8 md:right-8 bg-[#f48e1b] hover:bg-[#FFD580] text-[#0054ab] rounded-full shadow-lg flex items-center justify-center w-16 h-16 transition-all group"
@@ -159,7 +159,7 @@ export default function RootLayout({
               <span className="text-[#f48e1b] text-sm mb-2">Empowering Your Business, One Call at a Time</span>
               <span className="text-[#f48e1b] text-sm mb-2">1 York St, Sydney NSW 2000, Australia</span>
               <span className="text-[#f48e1b] text-sm mb-2">Email: <a href="mailto:info@AlphaLink.com" className="hover:text-white">info@alphalinkcall.com.au</a></span>
-              <span className="text-[#f48e1b] text-sm mb-2">Phone: <a href="tel:+1234567890" className="hover:text-white">(123) 456-7890</a></span>
+              <span className="text-[#f48e1b] text-sm mb-2">Phone: <a href="tel:+61414626109" className="hover:text-white">+61 414 626 109</a></span>
             </div>
             <div className="flex-1 flex flex-col items-center justify-center">
             <div className="flex justify-center gap-8 my-8">

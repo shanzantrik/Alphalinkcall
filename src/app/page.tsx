@@ -16,7 +16,7 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-b from-white via-[#f5faff] to-[#eaf4fb] flex flex-col items-center justify-center px-4 pt-10 w-full">
       {/* WhatsApp Floating Button */}
       <a
-        href="https://wa.me/61414626109"
+        href="https://wa.me/919085538844"
             target="_blank"
             rel="noopener noreferrer"
         className="fixed z-50 bottom-6 right-6 md:bottom-8 md:right-8 bg-[#f48e1b] hover:bg-[#FFD580] text-[#0054ab] rounded-full shadow-lg flex items-center justify-center w-16 h-16 transition-all group"
@@ -86,6 +86,35 @@ export default function Home() {
         </motion.div>
         {/* Animated Hero Visual - Responsive */}
         <motion.div className="flex-1 flex flex-col justify-center items-center relative min-h-[300px] md:min-h-[400px] w-full max-w-xs md:max-w-none mx-auto">
+          {/* Chat bubble with text and animated dotted arrow above the concentric circle */}
+          <div className="w-full flex flex-col items-center relative z-20" style={{ marginBottom: '0', marginTop: '-2.5rem', position: 'absolute', left: 0, right: 0, top: '-70px' }}>
+            {/* Chat bubble */}
+            <div className="bg-white border-2 border-[#f48e1b] rounded-2xl px-6 py-3 shadow-lg flex items-center gap-2 max-w-md mx-auto mb-0 relative" style={{ fontWeight: 700, fontSize: '1.1rem' }}>
+              <span className="text-[#0054ab]">Click on the logo below to talk to our</span>
+              <span className="text-[#f48e1b] ml-1">24/7 AlphaLink Assistant</span>
+              <span className="text-[#0054ab] ml-1">Now!</span>
+            </div>
+            {/* Animated dotted arrow from chat bubble to center of circle */}
+            <svg width="6" height="110" viewBox="0 0 6 110" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute left-1/2 -translate-x-1/2 top-full" style={{ zIndex: 10 }}>
+              <motion.line
+                x1="3" y1="0" x2="3" y2="100"
+                stroke="#f48e1b"
+                strokeWidth="4"
+                strokeDasharray="6 10"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: 1.5, ease: 'easeInOut', repeat: Infinity, repeatType: 'reverse' }}
+              />
+              {/* Arrowhead */}
+              <motion.polygon
+                points="0,100 6,100 3,110"
+                fill="#f48e1b"
+                initial={{ opacity: 0, scale: 0.7 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.7, delay: 1.2, repeat: Infinity, repeatType: 'reverse' }}
+              />
+            </svg>
+          </div>
           {/* Concentric Circles as background */}
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-0 w-[220px] h-[220px] md:w-[340px] md:h-[340px]">
             <svg width="100%" height="100%" viewBox="0 0 340 340" fill="none">
@@ -160,12 +189,7 @@ export default function Home() {
               <path fill="#438DFF" d="M56.3,42.1c-0.2-0.2-0.4-0.5-0.4-0.7c-0.2-0.9,0.3-1.6,1.2-1.9c7.1-1.6,14.5,0.5,19.7,5.6c5.2,5.2,7.3,12.5,5.6,19.7c-0.2,0.9-1,1.4-1.9,1.2c-0.9-0.2-1.4-1-1.2-1.9c1.4-6.1-0.4-12.4-4.8-16.7c-4.4-4.4-10.7-6.2-16.7-4.8C57.2,42.7,56.6,42.5,56.3,42.1z"></path>
             </svg>
           </motion.button>
-          {/* Text below logo circle */}
-          <div className="mt-40 text-center">
-            <span className="block text-lg md:text-xl font-bold text-[#0054ab]">
-              Click on the logo above to talk to our <span className="text-[#f48e1b]">24/7 AlphaLink Assistant</span> Now!
-            </span>
-          </div>
+
           {/* Animated Marquee Text */}
           <motion.div className="w-full absolute left-0 -bottom-12 md:-bottom-16 overflow-hidden" initial={false} animate={{}}>
             <motion.div

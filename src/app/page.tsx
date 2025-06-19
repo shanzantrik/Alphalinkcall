@@ -16,7 +16,7 @@ export default function Home() {
     <div className="min-h-screen bg-gradient-to-b from-white via-[#f5faff] to-[#eaf4fb] flex flex-col items-center justify-center px-4 pt-10 w-full">
       {/* WhatsApp Floating Button */}
       <a
-        href="https://wa.me/919085538844"
+        href="https://wa.me/15551730423?text=Hello%20AlphaLink%20Support"
             target="_blank"
             rel="noopener noreferrer"
         className="fixed z-50 bottom-6 right-6 md:bottom-8 md:right-8 bg-[#f48e1b] hover:bg-[#FFD580] text-[#0054ab] rounded-full shadow-lg flex items-center justify-center w-16 h-16 transition-all group"

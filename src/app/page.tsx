@@ -19,17 +19,17 @@ export default function Home() {
         href="https://wa.me/15551730423?text=Hello%20AlphaLink%20Support"
             target="_blank"
             rel="noopener noreferrer"
-        className="fixed z-50 bottom-6 right-6 md:bottom-8 md:right-8 bg-[#f48e1b] hover:bg-[#FFD580] text-[#0054ab] rounded-full shadow-lg flex items-center justify-center w-16 h-16 transition-all group"
+        className="fixed z-50 bottom-4 right-4 md:bottom-8 md:right-8 bg-[#f48e1b] hover:bg-[#FFD580] text-[#0054ab] rounded-full shadow-lg flex items-center justify-center w-14 h-14 md:w-16 md:h-16 transition-all group"
         title="Chat with us on WhatsApp"
         aria-label="Chat with us on WhatsApp"
       >
-        <FaWhatsapp className="text-4xl" />
+        <FaWhatsapp className="text-3xl md:text-4xl" />
         <span className="absolute bottom-20 right-0 bg-[#0054ab] text-white text-xs rounded px-3 py-1 opacity-0 group-hover:opacity-100 transition pointer-events-none">Chat with us on WhatsApp</span>
       </a>
       {/* Floating Book a Free Consultation Button */}
       <button
         onClick={() => setModalOpen(true)}
-        className="fixed z-50 top-1/3 right-6 md:right-10 bg-gradient-to-r from-[#f48e1b] to-[#ffd580] text-[#0054ab] rounded-full shadow-lg flex items-center gap-3 px-6 py-4 font-bold text-lg animate-bounce hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-[#f48e1b] overflow-hidden"
+        className="fixed z-50 top-1/3 right-4 md:right-10 bg-gradient-to-r from-[#f48e1b] to-[#ffd580] text-[#0054ab] rounded-full shadow-lg flex items-center gap-3 px-4 py-3 md:px-6 md:py-4 font-bold text-lg animate-bounce hover:scale-105 transition-all focus:outline-none focus:ring-4 focus:ring-[#f48e1b] overflow-hidden"
         style={{ boxShadow: '0 8px 32px 0 rgba(244, 142, 27, 0.18)' }}
         aria-label="Book a Free Consultation"
       >
@@ -77,7 +77,7 @@ export default function Home() {
           </p>
           <button
             onClick={() => setModalOpen(true)}
-            className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#0054ab] to-[#0074d9] text-white rounded-full font-bold text-lg shadow hover:from-[#003366] hover:to-[#0054ab] transition"
+            className="hidden md:inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#0054ab] to-[#0074d9] text-white rounded-full font-bold text-lg shadow hover:from-[#003366] hover:to-[#0054ab] transition"
           >
             <FaPhoneAlt className="text-[#f48e1b] text-base" /> Get in Touch
           </button>
@@ -89,10 +89,10 @@ export default function Home() {
           {/* Chat bubble with text and animated dotted arrow above the concentric circle */}
           <div className="w-full flex flex-col items-center relative z-20" style={{ marginBottom: '0', marginTop: '-2.5rem', position: 'absolute', left: 0, right: 0, top: '-70px' }}>
             {/* Chat bubble */}
-            <div className="bg-white border-2 border-[#f48e1b] rounded-2xl px-6 py-3 shadow-lg flex items-center gap-2 max-w-md mx-auto mb-0 relative" style={{ fontWeight: 700, fontSize: '0.95rem' }}>
-              <div className="flex flex-row flex-nowrap w-full whitespace-nowrap">
-                <div className="flex-1 text-[#0054ab] text-left overflow-hidden text-ellipsis">Click below to talk to our</div>
-                <div className="flex-1 text-[#f48e1b] text-right overflow-hidden text-ellipsis">24/7 AlphaLink Assistant</div>
+            <div className="bg-white border-2 border-[#f48e1b] rounded-2xl px-4 sm:px-6 py-3 shadow-lg flex items-center max-w-xs sm:max-w-md mx-auto mb-0 relative" style={{ fontWeight: 700, fontSize: '0.95rem' }}>
+              <div className="flex flex-col sm:flex-row w-full text-center sm:text-left gap-1">
+                <div className="flex-1 text-[#0054ab]">Click below to talk to our</div>
+                <div className="flex-1 text-[#f48e1b] sm:text-right font-bold">24/7 AlphaLink Assistant</div>
               </div>
             </div>
             {/* Raindrop arrows animation */}

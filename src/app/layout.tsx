@@ -2,7 +2,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
-import { FaLinkedin, FaTwitter, FaFacebook, FaPhoneAlt, FaArrowUp, FaHome } from "react-icons/fa";
+import { FaInstagram, FaTwitter, FaFacebook, FaPhoneAlt, FaArrowUp, FaHome } from "react-icons/fa";
 import CookieConsent from "@/components/CookieConsent";
 import SubscribeForm from "../components/SubscribeForm";
 import { useState } from "react";
@@ -74,9 +74,9 @@ export default function RootLayout({
               </Link>
             </nav>
             <div className="hidden md:flex gap-4 ml-6 text-xl">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-[#0054ab] hover:text-[#f48e1b]"><FaLinkedin /></a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-[#0054ab] hover:text-[#f48e1b]"><FaTwitter /></a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-[#0054ab] hover:text-[#f48e1b]"><FaFacebook /></a>
+              <a href="https://www.instagram.com/alphalinkcall?igsh=ang5MGtqN2thZmpt" target="_blank" rel="noopener noreferrer" className="text-[#0054ab] hover:text-[#f48e1b]"><FaInstagram /></a>
+              <a href="https://x.com/alphalinkcall?s=11" target="_blank" rel="noopener noreferrer" className="text-[#0054ab] hover:text-[#f48e1b]"><FaTwitter /></a>
+              <a href="https://www.facebook.com/share/1Ar4f228He/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="text-[#0054ab] hover:text-[#f48e1b]"><FaFacebook /></a>
             </div>
           </div>
           <div
@@ -112,9 +112,9 @@ export default function RootLayout({
               </Link>
             </nav>
             <div className="flex justify-center gap-6 text-2xl mt-10 mb-8">
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-[#0054ab] hover:text-[#f48e1b]"><FaLinkedin /></a>
-              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-[#0054ab] hover:text-[#f48e1b]"><FaTwitter /></a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-[#0054ab] hover:text-[#f48e1b]"><FaFacebook /></a>
+              <a href="https://www.instagram.com/alphalinkcall?igsh=ang5MGtqN2thZmpt" target="_blank" rel="noopener noreferrer" className="text-[#0054ab] hover:text-[#f48e1b]"><FaInstagram /></a>
+              <a href="https://x.com/alphalinkcall?s=11" target="_blank" rel="noopener noreferrer" className="text-[#0054ab] hover:text-[#f48e1b]"><FaTwitter /></a>
+              <a href="https://www.facebook.com/share/1Ar4f228He/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="text-[#0054ab] hover:text-[#f48e1b]"><FaFacebook /></a>
             </div>
           </aside>
         </header>
@@ -162,9 +162,9 @@ export default function RootLayout({
                               </span>
                    </div>
               <div className="flex justify-center gap-6 text-2xl mb-4">
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#f48e1b]"><FaLinkedin /></a>
-                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#f48e1b]"><FaTwitter /></a>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#f48e1b]"><FaFacebook /></a>
+                <a href="https://www.instagram.com/alphalinkcall?igsh=ang5MGtqN2thZmpt" target="_blank" rel="noopener noreferrer" className="hover:text-[#f48e1b]"><FaInstagram /></a>
+                <a href="https://x.com/alphalinkcall?s=11" target="_blank" rel="noopener noreferrer" className="hover:text-[#f48e1b]"><FaTwitter /></a>
+                <a href="https://www.facebook.com/share/1Ar4f228He/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="hover:text-[#f48e1b]"><FaFacebook /></a>
 
                   </div>
             </div>

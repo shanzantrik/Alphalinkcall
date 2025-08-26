@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useState, useEffect } from "react";
+import { useEffect } from "react";
 import Breadcrumbs from "../../components/Breadcrumbs";
 
 const countries = [
@@ -19,19 +19,7 @@ const servicesList = [
   "Others",
 ];
 
-export default function Contact() {
-  const form = useRef<HTMLFormElement | null>(null);
-  const [status, setStatus] = useState("");
-  const [country, setCountry] = useState(countries[0].code);
-  const [services, setServices] = useState<string[]>([]);
-  const [agreed, setAgreed] = useState(false);
-  const [captcha, setCaptcha] = useState({ a: 0, b: 0, answer: "" });
-  const [captchaValid, setCaptchaValid] = useState(true);
-  const [showThankYou, setShowThankYou] = useState(false);
-  const [emailError, setEmailError] = useState("");
-  const [phoneError, setPhoneError] = useState("");
-
-  // Generate a simple math captcha
+export default function ContactPage() {
   useEffect(() => {
     const a = Math.floor(Math.random() * 10) + 1;
     const b = Math.floor(Math.random() * 10) + 1;

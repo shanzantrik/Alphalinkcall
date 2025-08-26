@@ -1,7 +1,6 @@
 "use client";
 import { useRef, useState, useEffect } from "react";
 import Breadcrumbs from "../../components/Breadcrumbs";
-import emailjs from "@emailjs/browser";
 
 const countries = [
   { code: "+61", name: "Australia", flag: "🇦🇺" },
@@ -46,22 +45,25 @@ export default function Contact() {
     return /^\d{10}$/.test(phone);
   };
 
-  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("");
     setEmailError("");
     setPhoneError("");
+
     // Validate captcha
     if (parseInt(captcha.answer) !== captcha.a + captcha.b) {
       setCaptchaValid(false);
       return;
     }
     setCaptchaValid(true);
+
     // Validate email and phone
     const formData = new FormData(form.current!);
     const email = formData.get("email") as string;
     const phone = formData.get("phone") as string;
     let valid = true;
+
     if (!validateEmail(email)) {
       setEmailError("Please enter a valid email address.");
       valid = false;
@@ -70,38 +72,44 @@ export default function Contact() {
       setPhoneError("Please enter a 10-digit phone number.");
       valid = false;
     }
-    if (!valid) return;
-    formData.set("country", country);
-    formData.set("services", services.join(", "));
-    // Send to both emails (using EmailJS multiple recipients)
-    emailjs
-      .sendForm(
-        "service_887vd1j", // Replace with your EmailJS service ID
-        "template_ym0c5rn", // Replace with your EmailJS template ID
-        form.current!,
-        "AKLRoSPpUTcGcbUXq" // Replace with your EmailJS user/public key
-      )
-      .then(
-        () => {
-          setStatus("Message sent successfully!");
-          setShowThankYou(true);
-          if (form.current) form.current.reset();
-          // Send thank you email to user
-          emailjs.send(
-            "service_887vd1j", // Replace with your EmailJS service ID
-            "template_ym0c5rn", // Replace with your thank you template ID
-            {
-              to_email: formData.get("email"),
-              from_email: "hs@alphalinkcall.com.au",
-              name: formData.get("name"),
-            },
-            "AKLRoSPpUTcGcbUXq"
-          );
+    if (!valid) {
+      return;
+    }
+
+    // Prepare data for QContact API
+    const payload = {
+      name: formData.get("name"),
+      email: email,
+      phone: `${country}${phone}`,
+      services: services.join(", "),
+      message: formData.get("message"),
+      country: country,
+      timestamp: new Date().toISOString(),
+      source: "Alphalink Call Website"
+    };
+
+    try {
+      const response = await fetch('https://mediresponse.qcontact.com/api/v2/webhooks/dynamic/n4q4pox9qw', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
-        () => {
-          setStatus("Something went wrong. Please try again.");
-        }
-      );
+        body: JSON.stringify(payload)
+      });
+
+      if (response.ok) {
+        setStatus("Message sent successfully!");
+        setShowThankYou(true);
+        if (form.current) form.current.reset();
+        setServices([]);
+        setAgreed(false);
+      } else {
+        setStatus("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setStatus("Something went wrong. Please try again.");
+    }
   };
 
   if (showThankYou) {
@@ -213,7 +221,11 @@ export default function Contact() {
             />
             {!captchaValid && <span className="text-red-600 ml-2">Incorrect answer</span>}
           </div>
-          <button type="submit" className="relative w-full inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#f48e1b] to-[#ffd580] text-[#0054ab] rounded-full font-bold text-lg shadow hover:scale-105 transition focus:outline-none focus:ring-4 focus:ring-[#f48e1b] overflow-hidden" style={{ boxShadow: '0 8px 32px 0 rgba(244, 142, 27, 0.18)' }}>
+          <button
+            type="submit"
+            className="relative w-full inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#f48e1b] to-[#ffd580] text-[#0054ab] rounded-full font-bold text-lg shadow hover:scale-105 transition focus:outline-none focus:ring-4 focus:ring-[#f48e1b] overflow-hidden"
+            style={{ boxShadow: '0 8px 32px 0 rgba(244, 142, 27, 0.18)' }}
+          >
             {/* Animated Shine Overlay */}
             <span className="absolute inset-0 pointer-events-none">
               <span className="block w-full h-full animate-shine bg-gradient-to-r from-transparent via-white/60 to-transparent opacity-60" style={{ backgroundSize: '200% 100%' }}></span>
@@ -253,7 +265,7 @@ export default function Contact() {
             <h2 className="text-2xl font-bold text-[#0054ab] mb-2">Empowering Your Business, One Call at a Time</h2>
             <p className="text-[#0054ab] mb-1">1 York St, Sydney NSW 2000, Australia</p>
             <p className="text-[#0054ab] mb-1">Email: <a href="mailto:info@alphalinkcall.com.au" className="text-[#f48e1b] underline">info@alphalinkcall.com.au</a></p>
-            <p className="text-[#0054ab]">Phone: <a href="tel:+1234567890" className="text-[#f48e1b] underline">(123) 456-7890</a></p>
+            <p className="text-[#0054ab]">Phone: <a href="tel:+61489262774" className="text-[#f48e1b] underline">+61-489262774</a></p>
           </div>
         </div>
       </div>

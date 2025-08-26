@@ -7,6 +7,14 @@ const countries = [
   { code: "+1", name: "USA", flag: "🇺🇸" },
   { code: "+44", name: "UK", flag: "🇬🇧" },
   { code: "+91", name: "India", flag: "🇮🇳" },
+  { code: "+971", name: "UAE", flag: "🇦🇪" },
+  { code: "+49", name: "Germany", flag: "🇩🇪" },
+  { code: "+33", name: "France", flag: "🇫🇷" },
+  { code: "+39", name: "Italy", flag: "🇮🇹" },
+  { code: "+34", name: "Spain", flag: "🇪🇸" },
+  { code: "+31", name: "Netherlands", flag: "🇳🇱" },
+  { code: "+353", name: "Ireland", flag: "🇮🇪" },
+  { code: "+352", name: "Luxembourg", flag: "🇱🇺" },
 ];
 
 const servicesList = [

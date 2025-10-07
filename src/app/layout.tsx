@@ -147,7 +147,7 @@ export default function RootLayout({
               <span className="text-[#f48e1b] text-sm mb-2">Empowering Your Business, One Call at a Time</span>
               <span className="text-[#f48e1b] text-sm mb-2">1 York St, Sydney NSW 2000, Australia</span>
               <span className="text-[#f48e1b] text-sm mb-2">Email: <a href="mailto:info@AlphaLink.com" className="hover:text-white">info@alphalinkcall.com.au</a></span>
-              <span className="text-[#f48e1b] text-sm mb-2">Phone: <a href="tel:+61414626109" className="hover:text-white">+61 414 626 109</a></span>
+              <span className="text-[#f48e1b] text-sm mb-2">Phone: <a href="tel:+61425285597" className="hover:text-white">+61 425285597</a></span>
             </div>
             <div className="flex-1 flex flex-col items-center justify-center">
             <div className="flex justify-center gap-8 my-8">

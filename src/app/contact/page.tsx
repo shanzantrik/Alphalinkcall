@@ -273,7 +273,7 @@ export default function ContactPage() {
             <h2 className="text-2xl font-bold text-[#0054ab] mb-2">Empowering Your Business, One Call at a Time</h2>
             <p className="text-[#0054ab] mb-1">1 York St, Sydney NSW 2000, Australia</p>
             <p className="text-[#0054ab] mb-1">Email: <a href="mailto:info@alphalinkcall.com.au" className="text-[#f48e1b] underline">info@alphalinkcall.com.au</a></p>
-            <p className="text-[#0054ab]">Phone: <a href="tel:+61489262774" className="text-[#f48e1b] underline">+61-489262774</a></p>
+            <p className="text-[#0054ab]">Phone: <a href="tel:+61425285597" className="text-[#f48e1b] underline">+61 425285597</a></p>
           </div>
         </div>
       </div>

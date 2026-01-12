@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
-import { generateMetadata } from '@/lib/seo';
+import { createMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = generateMetadata({
+export const metadata: Metadata = createMetadata({
   title: 'AlphaLink - Empowering Your Business, One Call at a Time',
   description: 'Professional 24/7 call answering services for Australian businesses. Never miss a customer call with AlphaLink\'s flexible, affordable call centre solutions. Starting from $199/month.',
   keywords: ['call answering service', '24/7 call answering', 'virtual receptionist', 'call centre Australia'],

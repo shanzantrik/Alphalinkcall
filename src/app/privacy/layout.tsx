@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
-import { generateMetadata } from '@/lib/seo';
+import { createMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = generateMetadata({
+export const metadata: Metadata = createMetadata({
   title: 'Privacy Policy - AlphaLink',
   description: 'AlphaLink\'s Privacy Policy outlines how we collect, use, store, and disclose your information in accordance with Australian Privacy Principles.',
   keywords: ['privacy policy', 'data protection', 'privacy'],

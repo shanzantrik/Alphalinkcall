@@ -6,9 +6,9 @@ import Breadcrumbs from "../../components/Breadcrumbs";
 import Image from "next/image";
 
 import { Metadata } from 'next';
-import { generateMetadata } from '@/lib/seo';
+import { createMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = generateMetadata({
+export const metadata: Metadata = createMetadata({
   title: 'Blog & Resources - Call Centre Insights & Tips',
   description: 'Read the latest insights, tips, and trends in customer service and call centre management from AlphaLink\'s experts. Learn how to improve your call handling and customer experience.',
   keywords: ['call centre blog', 'customer service tips', 'call answering tips', 'business resources'],

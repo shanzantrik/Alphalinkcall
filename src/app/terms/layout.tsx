@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
-import { generateMetadata } from '@/lib/seo';
+import { createMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = generateMetadata({
+export const metadata: Metadata = createMetadata({
   title: 'Terms of Service - AlphaLink',
   description: 'AlphaLink\'s Terms of Service govern the use of our call answering and support services. Read our terms and conditions.',
   keywords: ['terms of service', 'terms and conditions'],

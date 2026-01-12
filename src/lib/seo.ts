@@ -43,7 +43,7 @@ interface SEOConfig {
   nofollow?: boolean;
 }
 
-export function generateMetadata(config: SEOConfig = {}): Metadata {
+export function createMetadata(config: SEOConfig = {}): Metadata {
   const {
     title,
     description,
@@ -120,4 +120,4 @@ export function generateMetadata(config: SEOConfig = {}): Metadata {
   };
 }
 
-export const defaultSEO = generateMetadata();
+export const defaultSEO = createMetadata();

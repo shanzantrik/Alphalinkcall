@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
-import { generateMetadata } from '@/lib/seo';
+import { createMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = generateMetadata({
+export const metadata: Metadata = createMetadata({
   title: 'Technology & AI-Powered Call Routing Solutions',
   description: 'Explore AlphaLink\'s cutting-edge technology: AI-powered call routing, virtual customer support, omnichannel solutions, and seamless integrations. Built to empower your business.',
   keywords: ['AI call routing', 'virtual customer support', 'call centre technology', 'omnichannel support', 'CRM integration'],

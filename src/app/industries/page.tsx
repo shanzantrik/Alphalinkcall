@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import CalendlyModal from "../../components/CalendlyModal";
 import {
-  FaTools,
+  FaWrench,
   FaUserMd,
   FaHome,
   FaShoppingCart,
@@ -14,7 +14,7 @@ import { GiLotus } from "react-icons/gi";
 const industries = [
   {
     name: "Trades & Field Services",
-    icon: <FaTools className="text-[#0054ab] text-3xl" />, // 🛠️
+    icon: <FaWrench className="text-[#0054ab] text-3xl" />, // 🛠️
     emoji: "🛠️",
     tabColor: "text-[#0054ab]",
     contentHeaderColor: "text-[#0054ab]",
@@ -132,7 +132,15 @@ const industries = [
 
 const tabVariants = {
   initial: { x: 80, opacity: 0 },
-  animate: { x: 0, opacity: 1, transition: { type: "spring", bounce: 0.3, duration: 0.7 } },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      type: "spring" as const,
+      bounce: 0.3,
+      duration: 0.7
+    }
+  },
   exit: { x: -80, opacity: 0, transition: { duration: 0.4 } },
 };
 

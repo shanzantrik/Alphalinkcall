@@ -238,7 +238,7 @@ export default function Home() {
         {/* Services */}
         <Link href="/services" className="group block rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition bg-white border-2 border-[#eaf4fb]">
           <div className="relative w-full h-56">
-            <Image src="/alpha4.webp" alt="Services" fill className="object-cover w-full h-full group-hover:scale-105 transition duration-300" />
+            <Image src="/alpha4.webp" alt="Services" fill className="object-cover w-full h-full group-hover:scale-105 transition duration-300" loading="lazy" fetchPriority="low" />
           </div>
           <div className="p-6 flex flex-col items-start">
             <h2 className="text-2xl font-bold text-[#0054ab] mb-2">Call Answering Services</h2>
@@ -249,7 +249,7 @@ export default function Home() {
         {/* Technology */}
         <Link href="/technology" className="group block rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition bg-white border-2 border-[#eaf4fb]">
           <div className="relative w-full h-56">
-            <Image src="/alpha5.webp" alt="Smart Call Routing" fill className="object-cover w-full h-full group-hover:scale-105 transition duration-300" />
+            <Image src="/alpha5.webp" alt="Smart Call Routing" fill className="object-cover w-full h-full group-hover:scale-105 transition duration-300" loading="lazy" fetchPriority="low" />
           </div>
           <div className="p-6 flex flex-col items-start">
             <h2 className="text-2xl font-bold text-[#0054ab] mb-2">Smart Call Routing</h2>
@@ -260,7 +260,7 @@ export default function Home() {
         {/* Industries */}
         <Link href="/industries" className="group block rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition bg-white border-2 border-[#eaf4fb]">
           <div className="relative w-full h-56">
-            <Image src="/alpha6.webp" alt="Industries" fill className="object-cover w-full h-full group-hover:scale-105 transition duration-300" />
+            <Image src="/alpha6.webp" alt="Industries" fill className="object-cover w-full h-full group-hover:scale-105 transition duration-300" loading="lazy" fetchPriority="low" />
           </div>
           <div className="p-6 flex flex-col items-start">
             <h2 className="text-2xl font-bold text-[#0054ab] mb-2">For Trades & Services</h2>
@@ -418,6 +418,8 @@ export default function Home() {
             width={600}
             height={256}
             className="rounded-2xl shadow-lg w-full max-w-md object-cover border-4 border-[#f48e1b]"
+            loading="lazy"
+            fetchPriority="low"
           />
         </div>
       </section>

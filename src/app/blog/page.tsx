@@ -5,10 +5,16 @@ import Link from "next/link";
 import Breadcrumbs from "../../components/Breadcrumbs";
 import Image from "next/image";
 
-export const metadata = {
-  title: "Blog & Resources | InnoCall",
-  description: "Read the latest insights, tips, and trends in customer service and call center management from InnoCall's experts.",
-};
+import { Metadata } from 'next';
+import { generateMetadata } from '@/lib/seo';
+
+export const metadata: Metadata = generateMetadata({
+  title: 'Blog & Resources - Call Centre Insights & Tips',
+  description: 'Read the latest insights, tips, and trends in customer service and call centre management from AlphaLink\'s experts. Learn how to improve your call handling and customer experience.',
+  keywords: ['call centre blog', 'customer service tips', 'call answering tips', 'business resources'],
+  canonical: 'https://www.alphalinkcall.com.au/blog',
+  ogType: 'article',
+});
 
 const postsDirectory = path.join(process.cwd(), "src/app/blog/posts");
 
@@ -54,7 +60,7 @@ export default function Blog() {
         {posts.map((post) => (
           <div key={post.slug} className="bg-white rounded-xl shadow p-0 overflow-hidden">
             <Link href={`/blog/${post.slug}`}>
-              <Image src={post.imageUrl} alt={post.title} width={800} height={224} className="w-full h-56 object-cover" />
+              <Image src={post.imageUrl} alt={post.title} width={800} height={224} className="w-full h-56 object-cover" loading="lazy" fetchPriority="low" />
             </Link>
             <div className="p-6">
               <h2 className="text-2xl font-semibold text-gray-900 mb-2">

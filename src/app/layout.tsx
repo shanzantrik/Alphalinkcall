@@ -5,16 +5,21 @@ import Link from "next/link";
 import { FaInstagram, FaTwitter, FaFacebook, FaPhoneAlt, FaArrowUp, FaHome } from "react-icons/fa";
 import CookieConsent from "@/components/CookieConsent";
 import SubscribeForm from "../components/SubscribeForm";
+import StructuredData from "@/components/StructuredData";
 import { useState } from "react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: 'swap',
+  preload: true,
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: 'swap',
+  preload: true,
 });
 
 export default function RootLayout({
@@ -25,12 +30,22 @@ export default function RootLayout({
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <html lang="en">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        <meta name="theme-color" content="#0054ab" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <link rel="canonical" href="https://www.alphalinkcall.com.au" />
+        <link rel="alternate" hrefLang="en-AU" href="https://www.alphalinkcall.com.au" />
+        <link rel="alternate" hrefLang="en" href="https://www.alphalinkcall.com.au" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.alphalinkcall.com.au" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <header className="w-full bg-gradient-to-b from-white to-[#f5faff] shadow-sm fixed top-0 left-0 z-50 border-b border-[#0054ab]">
           <div className="w-full flex justify-between items-center py-6 px-4 md:px-10">
-            <Link href="/" className="flex items-center gap-2 text-2xl font-bold tracking-tight text-[#0054ab]">
+            <Link href="/" className="flex items-center gap-2 text-2xl font-bold tracking-tight text-[#0054ab]" aria-label="AlphaLink Home">
               <span className="inline-block align-middle" style={{ width: 40, height: 40 }}>
                 <svg viewBox="0 0 120 120" id="Layer_1" xmlns="http://www.w3.org/2000/svg" fill="none" width="40" height="40">
                   <ellipse fill="#f48e1b" cx="20.1" cy="65" rx="6.4" ry="6.4"></ellipse>
@@ -74,9 +89,9 @@ export default function RootLayout({
               </Link>
             </nav>
             <div className="hidden md:flex gap-4 ml-6 text-xl">
-              <a href="https://www.instagram.com/alphalinkcall?igsh=ang5MGtqN2thZmpt" target="_blank" rel="noopener noreferrer" className="text-[#0054ab] hover:text-[#f48e1b]"><FaInstagram /></a>
-              <a href="https://x.com/alphalinkcall?s=11" target="_blank" rel="noopener noreferrer" className="text-[#0054ab] hover:text-[#f48e1b]"><FaTwitter /></a>
-              <a href="https://www.facebook.com/share/1Ar4f228He/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="text-[#0054ab] hover:text-[#f48e1b]"><FaFacebook /></a>
+              <a href="https://www.instagram.com/alphalinkcall?igsh=ang5MGtqN2thZmpt" target="_blank" rel="noopener noreferrer" className="text-[#0054ab] hover:text-[#f48e1b]" aria-label="Follow us on Instagram"><FaInstagram /></a>
+              <a href="https://x.com/alphalinkcall?s=11" target="_blank" rel="noopener noreferrer" className="text-[#0054ab] hover:text-[#f48e1b]" aria-label="Follow us on Twitter"><FaTwitter /></a>
+              <a href="https://www.facebook.com/share/1Ar4f228He/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="text-[#0054ab] hover:text-[#f48e1b]" aria-label="Follow us on Facebook"><FaFacebook /></a>
             </div>
           </div>
           <div
@@ -112,9 +127,9 @@ export default function RootLayout({
               </Link>
             </nav>
             <div className="flex justify-center gap-6 text-2xl mt-10 mb-8">
-              <a href="https://www.instagram.com/alphalinkcall?igsh=ang5MGtqN2thZmpt" target="_blank" rel="noopener noreferrer" className="text-[#0054ab] hover:text-[#f48e1b]"><FaInstagram /></a>
-              <a href="https://x.com/alphalinkcall?s=11" target="_blank" rel="noopener noreferrer" className="text-[#0054ab] hover:text-[#f48e1b]"><FaTwitter /></a>
-              <a href="https://www.facebook.com/share/1Ar4f228He/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="text-[#0054ab] hover:text-[#f48e1b]"><FaFacebook /></a>
+              <a href="https://www.instagram.com/alphalinkcall?igsh=ang5MGtqN2thZmpt" target="_blank" rel="noopener noreferrer" className="text-[#0054ab] hover:text-[#f48e1b]" aria-label="Follow us on Instagram"><FaInstagram /></a>
+              <a href="https://x.com/alphalinkcall?s=11" target="_blank" rel="noopener noreferrer" className="text-[#0054ab] hover:text-[#f48e1b]" aria-label="Follow us on Twitter"><FaTwitter /></a>
+              <a href="https://www.facebook.com/share/1Ar4f228He/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="text-[#0054ab] hover:text-[#f48e1b]" aria-label="Follow us on Facebook"><FaFacebook /></a>
             </div>
           </aside>
         </header>
@@ -162,9 +177,9 @@ export default function RootLayout({
                               </span>
                    </div>
               <div className="flex justify-center gap-6 text-2xl mb-4">
-                <a href="https://www.instagram.com/alphalinkcall?igsh=ang5MGtqN2thZmpt" target="_blank" rel="noopener noreferrer" className="hover:text-[#f48e1b]"><FaInstagram /></a>
-                <a href="https://x.com/alphalinkcall?s=11" target="_blank" rel="noopener noreferrer" className="hover:text-[#f48e1b]"><FaTwitter /></a>
-                <a href="https://www.facebook.com/share/1Ar4f228He/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="hover:text-[#f48e1b]"><FaFacebook /></a>
+                <a href="https://www.instagram.com/alphalinkcall?igsh=ang5MGtqN2thZmpt" target="_blank" rel="noopener noreferrer" className="hover:text-[#f48e1b]" aria-label="Follow us on Instagram"><FaInstagram /></a>
+                <a href="https://x.com/alphalinkcall?s=11" target="_blank" rel="noopener noreferrer" className="hover:text-[#f48e1b]" aria-label="Follow us on Twitter"><FaTwitter /></a>
+                <a href="https://www.facebook.com/share/1Ar4f228He/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="hover:text-[#f48e1b]" aria-label="Follow us on Facebook"><FaFacebook /></a>
 
                   </div>
             </div>
@@ -200,6 +215,7 @@ export default function RootLayout({
         <div className="fixed bottom-6 left-6 z-50 max-w-xs w-full">
           <CookieConsent />
         </div>
+        <StructuredData />
       </body>
     </html>
   );

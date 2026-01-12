@@ -66,6 +66,8 @@ export default function Services() {
             width={400}
             height={300}
             className="rounded-xl shadow-lg w-full max-w-md object-cover transition-all duration-500"
+            loading="lazy"
+            fetchPriority="low"
           />
         </div>
         {/* Right: Text */}

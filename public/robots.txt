@@ -1,3 +1,53 @@
+# robots.txt for AlphaLink Call Answering Services
+# https://www.alphalinkcall.com.au
+
 User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /private/
+
+# Allow important pages
+Allow: /
+Allow: /about
+Allow: /services
+Allow: /technology
+Allow: /industries
+Allow: /contact
+Allow: /blog
+Allow: /privacy
+Allow: /terms
+Allow: /sitemap
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Sitemap location
 Sitemap: https://www.alphalinkcall.com.au/sitemap.xml
+
+# Specific bot rules
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Googlebot-Image
+Allow: /public/
+Allow: /*.webp
+Allow: /*.jpg
+Allow: /*.png
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+# Block bad bots
+User-agent: AhrefsBot
+Crawl-delay: 10
+
+User-agent: SemrushBot
+Crawl-delay: 10
